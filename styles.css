@@ -271,12 +271,6 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-.social-link i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .social-link:hover {
     background: linear-gradient(90deg,#6a11cb,#2575fc);
     color: #fff;
