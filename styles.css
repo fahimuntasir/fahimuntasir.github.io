@@ -272,7 +272,9 @@ h1, h2, h3 {
 }
 
 .social-link i {
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-link:hover {
