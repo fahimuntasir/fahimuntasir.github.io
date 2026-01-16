@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 
-html { 
-    scroll-behavior: smooth; 
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,8 +23,8 @@ body {
     padding: 0 20px;
 }
 
-section { 
-    padding: 80px 0; 
+section {
+    padding: 80px 0;
 }
 
 /* TITLES */
@@ -77,8 +77,8 @@ h1, h2, h3 {
     display: flex;
 }
 
-.nav-links li { 
-    margin-left: 30px; 
+.nav-links li {
+    margin-left: 30px;
 }
 
 .nav-links a {
@@ -87,9 +87,9 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
-.mobile-menu-btn { 
-    display: none; 
-    font-size: 1.5rem; 
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -142,7 +142,6 @@ h1, h2, h3 {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    display: block;
 }
 
 /* ABOUT */
@@ -220,7 +219,7 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
-/* EDUCATION TIMELINE */
+/* EDUCATION */
 .timeline {
     max-width: 900px;
     margin: auto;
@@ -234,10 +233,6 @@ h1, h2, h3 {
     margin-bottom: 30px;
 }
 
-.timeline-item h3 {
-    margin-bottom: 5px;
-}
-
 .timeline-date {
     font-size: 0.95rem;
     color: #6a11cb;
@@ -247,14 +242,6 @@ h1, h2, h3 {
 .timeline-org {
     font-weight: 500;
     margin: 8px 0;
-}
-
-.timeline-item ul {
-    padding-left: 20px;
-}
-
-.timeline-item li {
-    margin-bottom: 6px;
 }
 
 /* AWARDS */
@@ -278,13 +265,6 @@ h1, h2, h3 {
     background: linear-gradient(90deg,#6a11cb,#2575fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.award-card span {
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #666;
 }
 
 /* RESEARCH */
@@ -350,7 +330,7 @@ h1, h2, h3 {
     margin-right: 6px;
 }
 
-/* SOCIAL LINKS (ALL PLATFORMS) */
+/* SOCIAL LINKS */
 .social-links {
     display: flex;
     justify-content: center;
@@ -358,7 +338,7 @@ h1, h2, h3 {
     margin-top: 25px;
 }
 
-.social-link {
+.social-links a {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -372,11 +352,7 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-.social-link i {
-    line-height: 1;
-}
-
-.social-link:hover {
+.social-links a:hover {
     background: linear-gradient(90deg,#6a11cb,#2575fc);
     color: #fff;
     transform: translateY(-4px);
