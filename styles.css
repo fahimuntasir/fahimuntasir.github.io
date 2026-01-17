@@ -396,12 +396,12 @@ h1, h2, h3 {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: #eee;
+    background: #f1f1ff;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
     font-size: 1.2rem;
+    color: #6a11cb; /* same color as other icons */
     transition: all 0.3s ease;
     text-decoration: none;
 }
