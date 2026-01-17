@@ -320,9 +320,9 @@ h1, h2, h3 {
 .client-avatar {
     width: 90px;
     height: 90px;
+    margin: 0 auto 15px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #6a11cb;
 }
 
 .client-avatar img {
