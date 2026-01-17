@@ -146,26 +146,53 @@ h1, h2, h3 {
 
 /* ABOUT */
 .about-content {
-    display: flex;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
     align-items: center;
 }
 
-.about-image {
-    display: flex;
-    justify-content: center;
+/* Text */
+.about-text p {
+    font-size: 14.8px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 14px;
 }
 
-.about-info {
-    margin-top: 20px;
+.about-lead {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 18px;
 }
 
+/* Info Card */
+.about-card {
+    background: #f9f9ff;
+    border-left: 4px solid #6c63ff;
+    padding: 22px 20px;
+    border-radius: 8px;
+}
+
+/* Info Items */
 .info-item {
-    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14.5px;
+    color: #333;
+    margin-bottom: 12px;
 }
 
-.info-label {
-    font-weight: 600;
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item i {
+    color: #6c63ff;
+    font-size: 15px;
+    min-width: 18px;
 }
 
 /* SKILLS */
@@ -368,10 +395,13 @@ h1, h2, h3 {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .hero .container,
-    .about-content {
+    .hero .container {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
     }
 
     .nav-links {
