@@ -412,34 +412,10 @@ h1, h2, h3 {
     transform: translateY(-4px);
 }
 
-.cv-card {
-    max-width: 600px;
-    margin: auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 14px;
+/* CONTACT – Academic CV Button */
+.contact-cv {
+    margin-top: 35px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,.06);
-}
-
-.cv-card i {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    background: linear-gradient(90deg,#6a11cb,#2575fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.cv-card p {
-    font-size: 14.5px;
-    color: #444;
-    margin-bottom: 15px;
-}
-
-.cv-card a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #6a11cb;
 }
 
 /* FOOTER */
