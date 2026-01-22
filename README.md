@@ -9,7 +9,7 @@ This repository contains the source code for my personal portfolio website, buil
 ## 📌 About This Project
 
 This portfolio is designed to present my academic background, professional experience, technical skills, and projects in a structured and accessible format.  
-It serves as a digital profile for academic applications, professional opportunities, and networking purposes.
+It serves as a digital profile for academic applications, professional opportunities, and professional networking.
 
 ---
 
@@ -70,7 +70,7 @@ is **copyright © MD FAHIM MUNTASIR** and **may not be reused, redistributed, or
 If you would like to connect or have any inquiries, feel free to reach out:
 
 * 🌐 Portfolio: [https://fahimuntasir.github.io/](https://fahimuntasir.github.io/)
-* 📧 Email: [your-fahim79muntasir@gmail.com](mailto:fahim79muntasir@gmail.com)
+* 📧 Email: [fahim79muntasir@gmail.com](mailto:fahim79muntasir@gmail.com)
 * 💼 GitHub: [https://github.com/fahimuntasir](https://github.com/fahimuntasir)
 
 ---
