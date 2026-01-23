@@ -657,7 +657,7 @@
         <h2 class="section-title">Honours & Awards</h2>
         
         <div class="awards-grid">
-            <div class="award-card">
+            <div class="award-card" data-cert="assets/images/certificates/outstanding_student_2022.jpg">
                 <i class="fas fa-award"></i>
                 <h3>Outstanding International Student</h3>
                 <p>Second-class Scholarship</p>
@@ -668,7 +668,7 @@
                 </span>
             </div>
             
-            <div class="award-card">
+            <div class="award-card" data-cert="assets/images/certificates/model_student_2021.jpg">
                 <i class="fas fa-medal"></i>
                 <h3>Model Student</h3>
                 <p>Third-class International Outstanding Student Scholarship</p>
@@ -681,6 +681,14 @@
         </div>
     </div>
 </section>
+
+<!-- Certificate Modal -->
+<div id="certificateModal" class="modal-overlay">
+    <div class="modal-box">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <img id="certificateImage" src="" alt="Award Certificate">
+    </div>
+</div>
 
 <!-- RECOMMENDATIONS -->
 <section class="section-padding" id="recommendations">
