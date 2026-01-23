@@ -492,14 +492,12 @@ h1, h2, h3 {
     gap: 8px;
 }
 
-.project-card a,
-.project-card i:hover {
+.project-btn:hover {
     color: #4f46e5;
     text-decoration: none;
 }
 
-.project-card a,
-.project-card i:focus {
+.project-btn:focus {
     outline: none;
     text-decoration: none;
 }
