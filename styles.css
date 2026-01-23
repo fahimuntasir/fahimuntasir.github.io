@@ -591,6 +591,16 @@ h1, h2, h3 {
     gap: 8px;
 }
 
+.project-card i:hover {
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.project-card i:focus {
+    outline: none;
+    text-decoration: none;
+}
+
 .project-link {
     text-decoration: none;
     color: #6a11cb;
