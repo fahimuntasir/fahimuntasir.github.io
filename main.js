@@ -112,3 +112,32 @@ if (backToTopBtn) {
         });
     });
 }
+
+/* =========================
+   CERTIFICATE MODAL
+========================= */
+const modal = document.getElementById("certificateModal");
+const modalImg = document.getElementById("certificateImage");
+const modalClose = document.querySelector(".modal-close");
+
+document.querySelectorAll(".award-card").forEach(card => {
+    card.addEventListener("click", () => {
+        const certSrc = card.getAttribute("data-cert");
+        if (!certSrc) return;
+
+        modalImg.src = certSrc;
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+    });
+});
+
+modalClose.addEventListener("click", closeModal);
+modal.addEventListener("click", e => {
+    if (e.target === modal) closeModal();
+});
+
+function closeModal() {
+    modal.classList.remove("show");
+    modalImg.src = "";
+    document.body.style.overflow = "";
+}
