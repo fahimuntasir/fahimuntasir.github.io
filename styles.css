@@ -402,123 +402,121 @@ h1, h2, h3 {
    EDUCATION SECTION
 ========================= */
 
-#education {
-    background: #f9fafc;
-}
-
 .education-list {
-    max-width: 850px;
-    margin: auto;
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 30px;
 }
 
 /* Card */
 .education-item {
     background: #ffffff;
-    border-radius: 16px;
-    padding: 26px 28px;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border-left: 5px solid #6a11cb;
+    border-radius: 14px;
+    padding: 28px 30px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-left: 4px solid #6a11cb;
 }
 
 .education-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.1);
 }
 
 /* Degree Title */
 .edu-degree {
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #111;
-    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 12px;
 }
 
+/* Degree icon */
 .edu-degree i {
-    color: #6a11cb;
+    color: #111;
+    font-size: 1.2rem;
 }
 
-/* University Line with Logo */
+/* University Row */
 .edu-university {
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #333;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
-.edu-university img {
-    width: 26px;
-    height: 26px;
+.edu-logo {
+    width: 34px;
+    height: 34px;
     object-fit: contain;
     border-radius: 6px;
+    background: #fff;
+    padding: 4px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
-/* Major */
-.edu-major {
-    font-size: 0.95rem;
-    color: #444;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.edu-major i {
-    color: #6a11cb;
-}
-
-/* Date & Location Row */
-.edu-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    font-size: 0.9rem;
+/* Info lines */
+.edu-line {
+    font-size: 0.92rem;
     color: #555;
-    margin-bottom: 8px;
-}
-
-.edu-meta span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.edu-meta i {
-    color: #6a11cb;
-}
-
-/* GPA */
-.edu-gpa {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #111;
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 6px;
 }
 
-.edu-gpa i {
+/* Icons inside lines (purple theme) */
+.edu-line i {
     color: #6a11cb;
+    min-width: 16px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* GPA Highlight */
+.edu-gpa {
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.edu-gpa strong {
+    color: #111;
+}
+
+/* Divider between cards (optional visual flow) */
+.education-item:not(:last-child)::after {
+    content: "";
+    display: block;
+    margin-top: 22px;
+    height: 1px;
+    background: #f0f0f0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
     .education-item {
         padding: 22px;
     }
 
-    .edu-meta {
-        flex-direction: column;
-        gap: 6px;
+    .edu-degree {
+        font-size: 1.05rem;
+    }
+
+    .edu-university {
+        font-size: 0.95rem;
+    }
+
+    .edu-line {
+        font-size: 0.88rem;
     }
 }
 
