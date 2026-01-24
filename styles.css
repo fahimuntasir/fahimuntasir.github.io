@@ -440,7 +440,7 @@ h1, h2, h3 {
 .edu-university {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     font-size: 1rem;
     font-weight: 500;
     color: #333;
@@ -462,7 +462,7 @@ h1, h2, h3 {
     color: #555;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     margin-bottom: 6px;
 }
 
