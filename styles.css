@@ -398,24 +398,72 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-/* EDUCATION */
+/* =========================
+   EDUCATION – MODERN TIMELINE
+========================= */
+
 .timeline {
+    position: relative;
     max-width: 900px;
     margin: auto;
+    padding-left: 40px;
 }
 
+/* Vertical Line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(#6a11cb, #2575fc);
+    border-radius: 2px;
+}
+
+/* Each Item */
 .timeline-item {
+    position: relative;
     background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.05);
+    padding: 22px 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
     margin-bottom: 30px;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
+.timeline-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,.1);
+}
+
+/* Timeline Icon Circle */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    box-shadow: 0 0 0 4px #f9f9f9;
+}
+
+/* Degree Title */
+.timeline-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Meta Info */
 .timeline-item p {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #333;
+    font-size: 0.92rem;
+    color: #444;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -424,24 +472,28 @@ h1, h2, h3 {
 
 .timeline-date i,
 .timeline-org i,
-.timeline-location i, 
+.timeline-location i,
 .timeline-detail i {
     color: #6a11cb;
     min-width: 16px;
 }
 
-.timeline-item h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #111;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
+/* GPA Highlight */
 .timeline-detail strong {
     color: #111;
+    font-weight: 600;
+}
+
+/* Education Institution Logo */
+.edu-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.08);
 }
 
 /* SKILLS */
