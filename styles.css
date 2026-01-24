@@ -24,12 +24,6 @@ body {
     margin-left: 4px;
 }
 
-.flag-icon {
-    width: 18px;
-    height: auto;
-    vertical-align: middle;
-}
-
 /* LAYOUT */
 .container {
     max-width: 1200px;
