@@ -488,15 +488,6 @@ h1, h2, h3 {
     color: #111;
 }
 
-/* Divider between cards (optional visual flow) */
-.education-item:not(:last-child)::after {
-    content: "";
-    display: block;
-    margin-top: 22px;
-    height: 1px;
-    background: #f0f0f0;
-}
-
 /* =========================
    RESPONSIVE
 ========================= */
