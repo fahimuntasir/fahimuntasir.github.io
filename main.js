@@ -78,8 +78,10 @@ function toggleEducation(button) {
 
     if (section.classList.contains("collapsed")) {
         section.classList.remove("collapsed");
+        section.style.maxHeight = section.scrollHeight + "px"; // 🔥 dynamic height
         button.textContent = "Hide Earlier Education";
     } else {
+        section.style.maxHeight = "0";
         section.classList.add("collapsed");
         button.textContent = "Show Earlier Education";
     }
