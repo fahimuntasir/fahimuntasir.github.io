@@ -482,13 +482,24 @@ h1, h2, h3 {
     color: #111;
 }
 
+.edu-toggle {
+    text-align: center;
+    margin: 10px 0;
+}
+
 .education-hidden {
     overflow: hidden;
     transition: max-height 0.5s ease;
 }
 
+/* Closed state */
 .education-hidden.collapsed {
     max-height: 0;
+}
+
+/* Optional spacing only when open */
+.education-hidden:not(.collapsed) {
+    margin-top: 10px;
 }
 
 /* =========================
