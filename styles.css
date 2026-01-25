@@ -568,6 +568,11 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
+.projects-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
 /* RESEARCH */
 .research-grid {
     max-width: 900px;
