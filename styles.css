@@ -977,13 +977,13 @@ h1, h2, h3 {
 }
 
 .icon-user {
-    -webkit-mask-image: url("assets/icons/male.svg");
-    mask-image: url("assets/icons/male.svg");
+    -webkit-mask-image: url("assets/icons/male 1.svg");
+    mask-image: url("assets/icons/male 1.svg");
 }
 
 .icon-user-female {
-    -webkit-mask-image: url("assets/icons/female.svg");
-    mask-image: url("assets/icons/female.svg");
+    -webkit-mask-image: url("assets/icons/female 1.svg");
+    mask-image: url("assets/icons/female 1.svg");
 }
 
 /* ---------- Bottom Note ---------- */
