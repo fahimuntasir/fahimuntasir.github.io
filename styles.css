@@ -997,13 +997,13 @@ h1, h2, h3 {
 }
 
 .icon-user {
-    -webkit-mask-image: url("assets/icons/businessman.svg");
-    mask-image: url("assets/icons/businessman.svg");
+    -webkit-mask-image: url("assets/icons/business-man.svg");
+    mask-image: url("assets/icons/business-man.svg");
 }
 
 .icon-user-female {
-    -webkit-mask-image: url("assets/icons/businesswoman.svg");
-    mask-image: url("assets/icons/businesswoman.svg");
+    -webkit-mask-image: url("assets/icons/business-woman.svg");
+    mask-image: url("assets/icons/business-woman.svg");
 }
 
 /* ---------- Bottom Note ---------- */
