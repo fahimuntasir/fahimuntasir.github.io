@@ -482,6 +482,15 @@ h1, h2, h3 {
     color: #111;
 }
 
+.education-hidden {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.education-hidden.collapsed {
+    max-height: 0;
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
