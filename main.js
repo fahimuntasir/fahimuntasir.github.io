@@ -71,6 +71,21 @@ function toggleDetails(button, openText, closeText) {
 }
 
 /* =========================
+   EDUCATION TOGGLE
+========================= */
+function toggleEducation(button) {
+    const section = document.querySelector(".education-hidden");
+
+    if (section.classList.contains("collapsed")) {
+        section.classList.remove("collapsed");
+        button.textContent = "Hide Earlier Education";
+    } else {
+        section.classList.add("collapsed");
+        button.textContent = "Show Earlier Education";
+    }
+}
+
+/* =========================
    OWL CAROUSEL
 ========================= */
 $(document).ready(function () {
