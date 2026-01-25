@@ -76,13 +76,11 @@ function toggleDetails(button, openText, closeText) {
 function toggleEducation(button) {
     const section = document.querySelector(".education-hidden");
 
-    if (section.classList.contains("collapsed")) {
-        section.classList.remove("collapsed");
-        section.style.maxHeight = section.scrollHeight + "px"; // 🔥 dynamic height
+    if (section.style.maxHeight === "0px" || section.style.maxHeight === "") {
+        section.style.maxHeight = section.scrollHeight + "px";
         button.textContent = "Hide Earlier Education";
     } else {
-        section.style.maxHeight = "0";
-        section.classList.add("collapsed");
+        section.style.maxHeight = "0px";
         button.textContent = "Show Earlier Education";
     }
 }
