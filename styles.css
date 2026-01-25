@@ -489,16 +489,12 @@ h1, h2, h3 {
 
 .education-hidden {
     overflow: hidden;
+    max-height: 0;
     transition: max-height 0.5s ease;
 }
 
 .education-hidden.collapsed {
     max-height: 0;
-}
-
-.education-hidden:not(.collapsed) {
-    max-height: 1000px;
-    margin-top: 10px;
 }
 
 /* =========================
