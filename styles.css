@@ -570,7 +570,13 @@ h1, h2, h3 {
 
 .projects-more {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 55px;
+    padding-top: 10px;
+}
+
+.projects-more .btn-secondary {
+    padding: 12px 26px;
+    font-weight: 600;
 }
 
 /* RESEARCH */
