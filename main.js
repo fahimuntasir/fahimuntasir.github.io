@@ -57,14 +57,7 @@ tabButtons.forEach(btn => {
    TOGGLE DETAILS (MERGED)
 ========================= */
 function toggleDetails(button, openText, closeText) {
-    let details = button.nextElementSibling;
-
-    // If button is wrapped inside a div (like education section)
-    if (!details || !details.classList.contains("collapsed")) {
-        details = button.parentElement.nextElementSibling;
-    }
-
-    if (!details) return;
+    const details = button.nextElementSibling;
 
     if (details.classList.contains("collapsed")) {
         details.classList.remove("collapsed");
