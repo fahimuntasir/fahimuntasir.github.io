@@ -533,6 +533,11 @@ h1, h2, h3 {
     box-shadow: 0 8px 20px rgba(0,0,0,.05);
 }
 
+.skill-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+
 .skill-icon {
     font-size: 2.5rem;
     margin-bottom: 10px;
