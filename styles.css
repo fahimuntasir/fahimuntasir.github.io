@@ -1080,9 +1080,11 @@ h1, h2, h3 {
 
 /* CONTACT – Academic CV Button */
 .contact-cv {
-    margin-top: 35px;
+    display: flex;
+    justify-content: center;
     gap: 18px;
-    text-align: center;
+    margin-top: 35px;
+    flex-wrap: wrap;
 }
 
 /* PRIMARY BUTTON (View Projects) */
