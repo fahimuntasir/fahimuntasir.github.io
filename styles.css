@@ -1088,6 +1088,14 @@ h1, h2, h3 {
     flex-wrap: wrap;
 }
 
+.contact-cv .btn-primary,
+.contact-cv .btn-secondary {
+    padding: 8px 16px;      /* smaller height */
+    font-size: 13px;        /* reduce text size */
+    border-radius: 22px;    /* softer pill */
+    gap: 6px;               /* smaller icon spacing */
+}
+
 /* PRIMARY BUTTON (View Projects) */
 .btn-primary {
     display: inline-flex;
