@@ -1081,6 +1081,7 @@ h1, h2, h3 {
 /* CONTACT – Academic CV Button */
 .contact-cv {
     margin-top: 35px;
+    margin-right: 10px;
     text-align: center;
 }
 
@@ -1122,7 +1123,7 @@ h1, h2, h3 {
     text-decoration: none;
     border: 1.8px solid #6a11cb;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-secondary:hover {
