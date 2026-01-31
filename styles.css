@@ -1081,9 +1081,7 @@ h1, h2, h3 {
 /* CONTACT – Academic CV Button */
 .contact-cv {
     margin-top: 35px;
-    display: flex;
     gap: 18px;
-    flex-wrap: wrap;
     text-align: center;
 }
 
