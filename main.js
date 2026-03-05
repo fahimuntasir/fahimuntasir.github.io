@@ -158,13 +158,25 @@ function closeModal() {
 }
 
 function scrollExperience(direction) {
+
     const slider = document.getElementById("experienceSlider");
     const card = slider.querySelector(".experience-card");
 
-    const cardWidth = card.offsetWidth + 30; // card width + gap
+    const cardWidth = card.offsetWidth + 30;
 
-    slider.scrollBy({
-        left: direction * cardWidth,
-        behavior: "smooth"
-    });
+    if(direction === 1){
+        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+            slider.scrollTo({ left:0, behavior:"smooth" });
+        } else {
+            slider.scrollBy({ left: cardWidth, behavior:"smooth" });
+        }
+    }
+
+    if(direction === -1){
+        if(slider.scrollLeft <= 0){
+            slider.scrollTo({ left: slider.scrollWidth, behavior:"smooth" });
+        } else {
+            slider.scrollBy({ left: -cardWidth, behavior:"smooth" });
+        }
+    }
 }
