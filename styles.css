@@ -242,6 +242,7 @@ h1, h2, h3 {
     transition: transform 0.4s ease;
     scroll-behavior:smooth;
     width:100%;
+    will-change: transform;
 }
 
 .experience-card{
