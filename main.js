@@ -157,26 +157,46 @@ function closeModal() {
     document.body.style.overflow = "";
 }
 
-function scrollExperience(direction) {
+/* =========================
+   EXPERIENCE SLIDER
+========================= */
+const slider = document.getElementById("experienceSlider");
+let cards = document.querySelectorAll(".experience-card");
 
-    const slider = document.getElementById("experienceSlider");
-    const card = slider.querySelector(".experience-card");
+let index = 1;
+let cardWidth = cards[0].offsetWidth + 30;
 
-    const cardWidth = card.offsetWidth + 30;
+// clone first & last
+const firstClone = cards[0].cloneNode(true);
+const lastClone = cards[cards.length - 1].cloneNode(true);
 
-    if(direction === 1){
-        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
-            slider.scrollTo({ left:0, behavior:"smooth" });
-        } else {
-            slider.scrollBy({ left: cardWidth, behavior:"smooth" });
-        }
-    }
+slider.appendChild(firstClone);
+slider.insertBefore(lastClone, cards[0]);
 
-    if(direction === -1){
-        if(slider.scrollLeft <= 0){
-            slider.scrollTo({ left: slider.scrollWidth, behavior:"smooth" });
-        } else {
-            slider.scrollBy({ left: -cardWidth, behavior:"smooth" });
-        }
-    }
+cards = document.querySelectorAll(".experience-card");
+
+slider.style.transform = `translateX(-${cardWidth * index}px)`;
+
+function scrollExperience(direction){
+
+    index += direction;
+    slider.style.transition = "transform 0.4s ease";
+    slider.style.transform = `translateX(-${cardWidth * index}px)`;
+
 }
+
+slider.addEventListener("transitionend", () => {
+
+    if(cards[index].isEqualNode(firstClone)){
+        slider.style.transition = "none";
+        index = 1;
+        slider.style.transform = `translateX(-${cardWidth * index}px)`;
+    }
+
+    if(cards[index].isEqualNode(lastClone)){
+        slider.style.transition = "none";
+        index = cards.length - 2;
+        slider.style.transform = `translateX(-${cardWidth * index}px)`;
+    }
+
+});
