@@ -245,8 +245,7 @@ h1, h2, h3 {
 }
 
 .experience-card{
-    min-width:calc(50% - 15px);
-    flex-shrink:0;
+    flex: 0 0 calc((100% - 30px) / 2);
     background: #ffffff;
     padding: 30px;
     border-radius: 18px;
