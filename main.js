@@ -160,15 +160,17 @@ function closeModal() {
 /* =========================
    EXPERIENCE SLIDER
 ========================= */
+
 const slider = document.getElementById("experienceSlider");
 let cards = document.querySelectorAll(".experience-card");
 
 const gap = 30;
 let index = 1;
+let isAnimating = false;
 
-// clone first and last cards
+// clone first and last
 const firstClone = cards[0].cloneNode(true);
-const lastClone = cards[cards.length-1].cloneNode(true);
+const lastClone = cards[cards.length - 1].cloneNode(true);
 
 slider.appendChild(firstClone);
 slider.insertBefore(lastClone, cards[0]);
@@ -179,10 +181,13 @@ function getCardWidth(){
     return cards[0].offsetWidth + gap;
 }
 
-// start position
+// initial position
 slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
 
 function scrollExperience(direction){
+
+    if(isAnimating) return; // prevent spam clicking
+    isAnimating = true;
 
     index += direction;
 
@@ -190,18 +195,27 @@ function scrollExperience(direction){
     slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
 }
 
-slider.addEventListener("transitionend",()=>{
+slider.addEventListener("transitionend", ()=>{
 
-    if(cards[index] === firstClone){
-        slider.style.transition="none";
+    // reached cloned last (real first)
+    if(index === cards.length - 1){
+        slider.style.transition = "none";
         index = 1;
         slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
     }
 
-    if(cards[index] === lastClone){
-        slider.style.transition="none";
-        index = cards.length-2;
+    // reached cloned first (real last)
+    if(index === 0){
+        slider.style.transition = "none";
+        index = cards.length - 2;
         slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
     }
 
+    isAnimating = false;
+});
+
+// optional: fix alignment on window resize
+window.addEventListener("resize", ()=>{
+    slider.style.transition = "none";
+    slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
 });
