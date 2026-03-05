@@ -161,27 +161,29 @@ function closeModal() {
    EXPERIENCE SLIDER
 ========================= */
 const slider = document.getElementById("experienceSlider");
-let cards = document.querySelectorAll(".experience-card");
 
-let index = 0;
-
-function getCardWidth(){
-    const card = slider.querySelector(".experience-card");
-    return card.offsetWidth + 30;
-}
+let position = 0;
 
 function scrollExperience(direction){
 
-    const cardWidth = getCardWidth();
-    index += direction;
+    const card = slider.querySelector(".experience-card");
+    const gap = 30;
+    const cardWidth = card.offsetWidth + gap;
 
-    if(index >= cards.length){
-        index = 0;
+    position += direction;
+
+    slider.style.transform = `translateX(-${position * cardWidth}px)`;
+
+    // if reached end, reset smoothly
+    if(position >= slider.children.length / 2){
+        position = 0;
+        setTimeout(()=>{
+            slider.style.transition = "none";
+            slider.style.transform = `translateX(0px)`;
+            setTimeout(()=>{
+                slider.style.transition = "transform 0.4s ease";
+            },50);
+        },400);
     }
 
-    if(index < 0){
-        index = cards.length - 1;
-    }
-
-    slider.style.transform = `translateX(-${index * cardWidth}px)`;
 }
