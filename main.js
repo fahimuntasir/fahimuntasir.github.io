@@ -181,15 +181,31 @@ function scrollExperience(direction){
 
     slider.style.transform = `translateX(-${index * cardWidth}px)`;
 
+    // right side loop
     if(index >= cards.length){
         index = 0;
+
         setTimeout(()=>{
             slider.style.transition = "none";
             slider.style.transform = `translateX(0px)`;
+
             setTimeout(()=>{
                 slider.style.transition = "transform 0.4s ease";
             },50);
+
         },400);
+    }
+
+    // left side loop
+    if(index < 0){
+        index = cards.length - 1;
+
+        slider.style.transition = "none";
+        slider.style.transform = `translateX(-${index * cardWidth}px)`;
+
+        setTimeout(()=>{
+            slider.style.transition = "transform 0.4s ease";
+        },50);
     }
 
 }
