@@ -240,7 +240,6 @@ h1, h2, h3 {
     display:flex;
     gap:30px;
     transition: transform 0.4s ease;
-    overflow:hidden;
     scroll-behavior:smooth;
     width:100%;
 }
