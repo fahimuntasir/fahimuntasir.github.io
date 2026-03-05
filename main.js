@@ -157,12 +157,14 @@ function closeModal() {
     document.body.style.overflow = "";
 }
 
-function scrollExperience(direction){
+function scrollExperience(direction) {
     const slider = document.getElementById("experienceSlider");
-    const scrollAmount = 450;
+    const card = slider.querySelector(".experience-card");
+
+    const cardWidth = card.offsetWidth + 30; // card width + gap
 
     slider.scrollBy({
-        left: direction * scrollAmount,
+        left: direction * cardWidth,
         behavior: "smooth"
     });
 }
