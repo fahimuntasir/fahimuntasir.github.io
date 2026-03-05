@@ -186,7 +186,7 @@ slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
 
 function scrollExperience(direction){
 
-    if(isAnimating) return; // prevent spam clicking
+    if(isAnimating) return;
     isAnimating = true;
 
     index += direction;
@@ -197,24 +197,36 @@ function scrollExperience(direction){
 
 slider.addEventListener("transitionend", ()=>{
 
+    const width = getCardWidth();
+
     // reached cloned last (real first)
     if(index === cards.length - 1){
+
         slider.style.transition = "none";
         index = 1;
-        slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
+        slider.style.transform = `translateX(-${width * index}px)`;
+
+        requestAnimationFrame(()=>{
+            slider.style.transition = "transform 0.4s ease";
+        });
     }
 
     // reached cloned first (real last)
     if(index === 0){
+
         slider.style.transition = "none";
         index = cards.length - 2;
-        slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
+        slider.style.transform = `translateX(-${width * index}px)`;
+
+        requestAnimationFrame(()=>{
+            slider.style.transition = "transform 0.4s ease";
+        });
     }
 
     isAnimating = false;
 });
 
-// optional: fix alignment on window resize
+// keep alignment correct on resize
 window.addEventListener("resize", ()=>{
     slider.style.transition = "none";
     slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
