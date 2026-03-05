@@ -162,7 +162,14 @@ function closeModal() {
 ========================= */
 const slider = document.getElementById("experienceSlider");
 
-let position = 0;
+let cards = Array.from(slider.children);
+
+// duplicate cards for infinite effect
+cards.forEach(card => {
+    slider.appendChild(card.cloneNode(true));
+});
+
+let index = 0;
 
 function scrollExperience(direction){
 
@@ -170,13 +177,12 @@ function scrollExperience(direction){
     const gap = 30;
     const cardWidth = card.offsetWidth + gap;
 
-    position += direction;
+    index += direction;
 
-    slider.style.transform = `translateX(-${position * cardWidth}px)`;
+    slider.style.transform = `translateX(-${index * cardWidth}px)`;
 
-    // if reached end, reset smoothly
-    if(position >= slider.children.length / 2){
-        position = 0;
+    if(index >= cards.length){
+        index = 0;
         setTimeout(()=>{
             slider.style.transition = "none";
             slider.style.transform = `translateX(0px)`;
