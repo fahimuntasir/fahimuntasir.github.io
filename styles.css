@@ -274,11 +274,11 @@ h1, h2, h3 {
 }
 
 .exp-arrow.left{
-    left:-20px;
+    left:10px;
 }
 
 .exp-arrow.right{
-    right:-20px;
+    right:10px;
 }
 
 .exp-arrow:hover{
