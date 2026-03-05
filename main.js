@@ -161,51 +161,47 @@ function closeModal() {
    EXPERIENCE SLIDER
 ========================= */
 const slider = document.getElementById("experienceSlider");
+let cards = document.querySelectorAll(".experience-card");
 
-let cards = Array.from(slider.children);
+const gap = 30;
+let index = 1;
 
-// duplicate cards for infinite effect
-cards.forEach(card => {
-    slider.appendChild(card.cloneNode(true));
-});
+// clone first and last cards
+const firstClone = cards[0].cloneNode(true);
+const lastClone = cards[cards.length-1].cloneNode(true);
 
-let index = 0;
+slider.appendChild(firstClone);
+slider.insertBefore(lastClone, cards[0]);
+
+cards = document.querySelectorAll(".experience-card");
+
+function getCardWidth(){
+    return cards[0].offsetWidth + gap;
+}
+
+// start position
+slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
 
 function scrollExperience(direction){
 
-    const card = slider.querySelector(".experience-card");
-    const gap = 30;
-    const cardWidth = card.offsetWidth + gap;
-
     index += direction;
 
-    slider.style.transform = `translateX(-${index * cardWidth}px)`;
-
-    // right side loop
-    if(index >= cards.length){
-        index = 0;
-
-        setTimeout(()=>{
-            slider.style.transition = "none";
-            slider.style.transform = `translateX(0px)`;
-
-            setTimeout(()=>{
-                slider.style.transition = "transform 0.4s ease";
-            },50);
-
-        },400);
-    }
-
-    // left side loop
-    if(index < 0){
-        index = cards.length - 1;
-
-        slider.style.transition = "none";
-        slider.style.transform = `translateX(-${index * cardWidth}px)`;
-
-        setTimeout(()=>{
-            slider.style.transition = "transform 0.4s ease";
-        },50);
-    }
-
+    slider.style.transition = "transform 0.4s ease";
+    slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
 }
+
+slider.addEventListener("transitionend",()=>{
+
+    if(cards[index] === firstClone){
+        slider.style.transition="none";
+        index = 1;
+        slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
+    }
+
+    if(cards[index] === lastClone){
+        slider.style.transition="none";
+        index = cards.length-2;
+        slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
+    }
+
+});
