@@ -233,11 +233,13 @@ h1, h2, h3 {
     position: relative;
     display:flex;
     align-items:center;
+    overflow: hidden;
 }
 
 .experience-grid{
     display:flex;
     gap:30px;
+    transition: transform 0.4s ease;
     overflow:hidden;
     scroll-behavior:smooth;
     width:100%;
