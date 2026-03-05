@@ -163,40 +163,25 @@ function closeModal() {
 const slider = document.getElementById("experienceSlider");
 let cards = document.querySelectorAll(".experience-card");
 
-let index = 1;
-let cardWidth = cards[0].offsetWidth + 30;
+let index = 0;
 
-// clone first & last
-const firstClone = cards[0].cloneNode(true);
-const lastClone = cards[cards.length - 1].cloneNode(true);
-
-slider.appendChild(firstClone);
-slider.insertBefore(lastClone, cards[0]);
-
-cards = document.querySelectorAll(".experience-card");
-
-slider.style.transform = `translateX(-${cardWidth * index}px)`;
+function getCardWidth(){
+    const card = slider.querySelector(".experience-card");
+    return card.offsetWidth + 30;
+}
 
 function scrollExperience(direction){
 
+    const cardWidth = getCardWidth();
     index += direction;
-    slider.style.transition = "transform 0.4s ease";
-    slider.style.transform = `translateX(-${cardWidth * index}px)`;
 
+    if(index >= cards.length){
+        index = 0;
+    }
+
+    if(index < 0){
+        index = cards.length - 1;
+    }
+
+    slider.style.transform = `translateX(-${index * cardWidth}px)`;
 }
-
-slider.addEventListener("transitionend", () => {
-
-    if(cards[index].isEqualNode(firstClone)){
-        slider.style.transition = "none";
-        index = 1;
-        slider.style.transform = `translateX(-${cardWidth * index}px)`;
-    }
-
-    if(cards[index].isEqualNode(lastClone)){
-        slider.style.transition = "none";
-        index = cards.length - 2;
-        slider.style.transform = `translateX(-${cardWidth * index}px)`;
-    }
-
-});
