@@ -162,27 +162,35 @@ function closeModal() {
 ========================= */
 
 const slider = document.getElementById("experienceSlider");
-let cards = document.querySelectorAll(".experience-card");
+let cards = Array.from(document.querySelectorAll(".experience-card"));
 
 const gap = 30;
 let index = 1;
 let isAnimating = false;
 
-// clone first and last
-const firstClone = cards[0].cloneNode(true);
-const lastClone = cards[cards.length - 1].cloneNode(true);
+// clone first two and last two cards (because 2 cards are visible)
+const firstClone1 = cards[0].cloneNode(true);
+const firstClone2 = cards[1].cloneNode(true);
+const lastClone1 = cards[cards.length - 1].cloneNode(true);
+const lastClone2 = cards[cards.length - 2].cloneNode(true);
 
-slider.appendChild(firstClone);
-slider.insertBefore(lastClone, cards[0]);
+// add clones
+slider.appendChild(firstClone1);
+slider.appendChild(firstClone2);
+slider.insertBefore(lastClone1, slider.firstChild);
+slider.insertBefore(lastClone2, slider.firstChild);
 
-cards = document.querySelectorAll(".experience-card");
+cards = slider.querySelectorAll(".experience-card");
+
+// start after the prepended clones
+index = 2;
 
 function getCardWidth(){
     return cards[0].offsetWidth + gap;
 }
 
 // initial position
-slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
+slider.style.transform = `translateX(-${getCardWidth() * index}px)`;
 
 function scrollExperience(direction){
 
@@ -192,35 +200,26 @@ function scrollExperience(direction){
     index += direction;
 
     slider.style.transition = "transform 0.4s ease";
-    slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
+    slider.style.transform = `translateX(-${getCardWidth() * index}px)`;
 }
 
 slider.addEventListener("transitionend", ()=>{
 
     const width = getCardWidth();
+    const realCount = cards.length - 4; // remove clones
 
-    // reached cloned last (real first)
-    if(index === cards.length - 1){
-
+    // right side reset
+    if(index >= realCount + 2){
         slider.style.transition = "none";
-        index = 1;
+        index = 2;
         slider.style.transform = `translateX(-${width * index}px)`;
-
-        requestAnimationFrame(()=>{
-            slider.style.transition = "transform 0.4s ease";
-        });
     }
 
-    // reached cloned first (real last)
-    if(index === 0){
-
+    // left side reset
+    if(index < 2){
         slider.style.transition = "none";
-        index = cards.length - 2;
+        index = realCount + 1;
         slider.style.transform = `translateX(-${width * index}px)`;
-
-        requestAnimationFrame(()=>{
-            slider.style.transition = "transform 0.4s ease";
-        });
     }
 
     isAnimating = false;
@@ -229,5 +228,5 @@ slider.addEventListener("transitionend", ()=>{
 // keep alignment correct on resize
 window.addEventListener("resize", ()=>{
     slider.style.transition = "none";
-    slider.style.transform = `translateX(-${getCardWidth()*index}px)`;
+    slider.style.transform = `translateX(-${getCardWidth() * index}px)`;
 });
