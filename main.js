@@ -156,3 +156,13 @@ function closeModal() {
     modalImg.src = "";
     document.body.style.overflow = "";
 }
+
+function scrollExperience(direction){
+    const slider = document.getElementById("experienceSlider");
+    const scrollAmount = 450;
+
+    slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+    });
+}
