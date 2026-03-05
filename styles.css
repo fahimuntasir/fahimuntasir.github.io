@@ -427,6 +427,14 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
+@media (max-width: 768px){
+
+    .experience-card{
+        flex: 0 0 100%;
+    }
+
+}
+
 /* =========================
    EDUCATION SECTION
 ========================= */
