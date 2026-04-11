@@ -225,10 +225,6 @@ h1, h2, h3 {
 }
 
 /* EXPERIENCE */
-#experience {
-    background: #f9fafb;
-}
-
 .experience-wrapper{
     position: relative;
     display:flex;
