@@ -57,6 +57,7 @@ tabButtons.forEach(btn => {
    TOGGLE DETAILS (MERGED)
 ========================= */
 function toggleDetails(button, openText, closeText) {
+   const card = button.closest(".experience-card");
     const details = button.nextElementSibling;
 
     if (details.classList.contains("collapsed")) {
