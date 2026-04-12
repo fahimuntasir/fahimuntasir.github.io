@@ -193,6 +193,7 @@ function getCardWidth(){
 // initial position
 slider.style.transform = `translateX(-${getCardWidth() * index}px)`;
 
+// scroll direction
 function scrollExperience(direction){
 
     if(isAnimating) return;
