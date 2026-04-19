@@ -232,3 +232,61 @@ window.addEventListener("resize", ()=>{
     slider.style.transition = "none";
     slider.style.transform = `translateX(-${getCardWidth() * index}px)`;
 });
+
+/* =========================
+   DARK MODE (AUTO + SAVE)
+========================= */
+
+const themeToggle = document.getElementById("theme-toggle");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme) {
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+} else {
+    // Auto detect system
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add("dark-mode");
+    }
+}
+
+// Toggle manually
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+
+        updateIcon();
+    });
+}
+
+// Change icon
+function updateIcon() {
+    if (themeToggle) {
+        themeToggle.textContent =
+            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    }
+}
+
+updateIcon();
+
+/* =========================
+   DARK MODE AUTO SWITCH ON SYSTEM CHANGE
+========================= */
+
+const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+mediaQuery.addEventListener('change', e => {
+    if (!localStorage.getItem("theme")) {
+        document.body.classList.toggle("dark-mode", e.matches);
+        updateIcon();
+    }
+});
