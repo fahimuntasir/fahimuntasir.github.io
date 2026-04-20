@@ -98,6 +98,12 @@ h1, h2, h3 {
     padding: 20px;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* control spacing here */
+}
+
 .logo {
     font-weight: 700;
     font-size: 1.8rem;
