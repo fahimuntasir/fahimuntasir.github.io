@@ -102,7 +102,7 @@ h1, h2, h3 {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 20px; /* control spacing here */
+    gap: 30px; /* control spacing here */
 }
 
 .logo {
