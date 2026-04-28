@@ -242,12 +242,12 @@ const themeToggle = document.getElementById("theme-toggle");
 // Load saved theme
 const savedTheme = localStorage.getItem("theme");
 
-if (savedTheme) {
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-    }
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+} else if (savedTheme === "light") {
+    document.body.classList.remove("dark-mode");
 } else {
-    // Auto detect system
+    // No saved preference → follow system
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add("dark-mode");
     }
