@@ -697,6 +697,53 @@ h1, h2, h3 {
     -webkit-text-fill-color: transparent;
 }
 
+/* SKILL TAG STYLE (modern professional look) */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.skill-list span {
+    background: rgba(106, 17, 203, 0.08);
+    color: #6a11cb;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.skill-list span:hover {
+    background: #6a11cb;
+    color: #fff;
+}
+
+/* CARD UPGRADE */
+.skill-item {
+    border: 1px solid rgba(0,0,0,0.05);
+    border-top: 3px solid #6a11cb;
+}
+
+/* TITLE REFINEMENT */
+.skill-item h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* DARK MODE FIX */
+.dark-mode .skill-list span {
+    background: rgba(106, 17, 203, 0.15);
+    color: #a78bfa;
+}
+
+.dark-mode .skill-list span:hover {
+    background: #6a11cb;
+    color: #fff;
+}
+
 /* PROJECTS */
 .projects-grid {
     display: grid;
