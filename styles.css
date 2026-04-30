@@ -317,6 +317,7 @@ h1, h2, h3 {
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--text-color);
+    text-align: justify;
 }
 
 /* EXPERIENCE */
