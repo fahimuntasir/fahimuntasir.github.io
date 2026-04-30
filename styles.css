@@ -300,6 +300,9 @@ h1, h2, h3 {
 .strength-icon {
     font-size: 2.5rem;
     margin-bottom: 10px;
+}
+
+.strength-icon i {
     background: linear-gradient(90deg,#6a11cb,#2575fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
