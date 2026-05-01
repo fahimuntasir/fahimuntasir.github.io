@@ -1041,7 +1041,11 @@ h1, h2, h3 {
 
 .award-logo i {
     color: #6a11cb;
+    font-size: 0.85rem;
     margin-right: 4px;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
 }
 
 /* =========================
