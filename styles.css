@@ -102,7 +102,7 @@ h1, h2, h3 {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 30px; /* control spacing here */
+    gap: 30px;
 }
 
 .logo {
@@ -257,7 +257,7 @@ h1, h2, h3 {
     border-radius: 8px;
 }
 
-/* Info Items */
+/* Info Items - Normal icons (purple, text size) */
 .info-item {
     display: flex;
     align-items: center;
@@ -273,7 +273,7 @@ h1, h2, h3 {
 
 .info-item i {
     color: #6a11cb;
-    font-size: 15px;
+    font-size: 14.5px;
     min-width: 18px;
 }
 
@@ -297,6 +297,7 @@ h1, h2, h3 {
     transform: translateY(-6px);
 }
 
+/* MAIN ICON - Large + Gradient (Purple-Blue) */
 .strength-icon {
     font-size: 2.8rem;
     margin-bottom: 20px;
@@ -304,7 +305,7 @@ h1, h2, h3 {
     background: linear-gradient(90deg, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .strength-card h3 {
@@ -402,6 +403,7 @@ h1, h2, h3 {
     color: #e6e6e6;
 }
 
+/* Normal icons - purple, text size */
 .experience-date {
     font-size: 0.85rem;
     color: #555;
@@ -418,6 +420,7 @@ h1, h2, h3 {
 
 .experience-date i {
     color: #6a11cb;
+    font-size: 0.85rem;
     margin-right: 6px;
 }
 
@@ -457,6 +460,7 @@ h1, h2, h3 {
 
 .experience-location i {
     color: #6a11cb;
+    font-size: 0.9rem;
     margin-right: 6px;
 }
 
@@ -473,6 +477,7 @@ h1, h2, h3 {
 
 .experience-project i {
     color: #6a11cb;
+    font-size: 0.9rem;
     margin-right: 6px;
 }
 
@@ -600,14 +605,10 @@ h1, h2, h3 {
     color: #e6e6e6;
 }
 
-/* Degree icon */
+/* Degree icon - Normal purple, text size */
 .edu-degree i {
-    color: #111;
+    color: #6a11cb;
     font-size: 1.2rem;
-}
-
-.dark-mode .edu-degree i {
-    color: #e6e6e6;
 }
 
 /* University Row */
@@ -648,9 +649,10 @@ h1, h2, h3 {
     color: #aaa;
 }
 
-/* Icons inside lines (purple theme) */
+/* Icons inside lines - Normal purple, text size */
 .edu-line i {
     color: #6a11cb;
+    font-size: 0.92rem;
     min-width: 16px;
 }
 
@@ -731,16 +733,17 @@ h1, h2, h3 {
     line-height: 1.6;
 }
 
+/* MAIN ICON - Large + Gradient (Purple-Blue) */
 .skill-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg,#6a11cb,#2575fc);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
-/* SKILL TAG STYLE (modern professional look) */
+/* SKILL TAG STYLE */
 .skill-list {
     display: flex;
     flex-wrap: wrap;
@@ -814,6 +817,12 @@ h1, h2, h3 {
     color: var(--text-color);
 }
 
+.project-link {
+    text-decoration: none;
+    color: #6a11cb;
+    font-weight: 500;
+}
+
 .project-link:hover {
     color: #4f46e5;
     text-decoration: none;
@@ -822,12 +831,6 @@ h1, h2, h3 {
 .project-link:focus {
     outline: none;
     text-decoration: none;
-}
-
-.project-link {
-    text-decoration: none;
-    color: #6a11cb;
-    font-weight: 500;
 }
 
 .projects-more {
@@ -869,8 +872,9 @@ h1, h2, h3 {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Normal icons - purple, text size */
 .research-item i {
-    font-size: 16px;
+    font-size: 14.5px;
     color: #6a11cb;
     min-width: 20px;
 }
@@ -912,6 +916,7 @@ h1, h2, h3 {
     color: #e6e6e6;
 }
 
+/* Normal icons - purple, text size */
 .training-context {
     font-size: 0.9rem;
     color: #444;
@@ -924,6 +929,7 @@ h1, h2, h3 {
 
 .training-context i {
     color: #6a11cb;
+    font-size: 0.9rem;
     margin-right: 6px;
 }
 
@@ -940,6 +946,7 @@ h1, h2, h3 {
 
 .training-desc i {
     color: #6a11cb;
+    font-size: 0.9rem;
     margin-right: 6px;
 }
 
@@ -954,6 +961,7 @@ h1, h2, h3 {
 
 .training-meta i {
     color: #6a11cb;
+    font-size: 0.85rem;
     margin-right: 6px;
 }
 
@@ -1009,6 +1017,7 @@ h1, h2, h3 {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0,0,0,.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
 }
 
 .award-card:hover {
@@ -1016,11 +1025,7 @@ h1, h2, h3 {
     box-shadow: 0 14px 40px rgba(0,0,0,.1);
 }
 
-.award-card i {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
+/* MAIN ICON - Large + Gradient (Purple-Blue) */
 .award-card > i {
     font-size: 2.8rem;
     margin-bottom: 20px;
@@ -1028,7 +1033,7 @@ h1, h2, h3 {
     background: linear-gradient(90deg, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .award-logo {
@@ -1040,13 +1045,11 @@ h1, h2, h3 {
     color: #aaa;
 }
 
+/* Small icons in award-logo - Normal purple, text size */
 .award-logo i {
     color: #6a11cb;
     font-size: 0.85rem;
     margin-right: 4px;
-    background: none;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
 }
 
 /* =========================
@@ -1101,11 +1104,6 @@ h1, h2, h3 {
 
 .modal-close:hover {
     color: #000;
-}
-
-/* Cursor hint */
-.award-card {
-    cursor: pointer;
 }
 
 /* =========================
@@ -1275,7 +1273,7 @@ h1, h2, h3 {
     text-decoration: underline;
 }
 
-/* ---------- Icons ---------- */
+/* ---------- Normal Icons - Purple, text size ---------- */
 #recommendations i {
     color: #6a11cb;
     margin-right: 4px;
@@ -1360,8 +1358,10 @@ h1, h2, h3 {
     color: var(--text-color);
 }
 
+/* Normal icons - purple, text size */
 .contact-info i {
     color: #6a11cb;
+    font-size: 14.5px;
     margin-right: 6px;
 }
 
@@ -1409,13 +1409,13 @@ h1, h2, h3 {
 
 .contact-cv .btn-primary,
 .contact-cv .btn-secondary {
-    padding: 8px 16px;      /* smaller height */
-    font-size: 13px;        /* reduce text size */
-    border-radius: 22px;    /* softer pill */
-    gap: 6px;               /* smaller icon spacing */
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 22px;
+    gap: 6px;
 }
 
-/* PRIMARY BUTTON (View Projects) */
+/* PRIMARY BUTTON */
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -1438,7 +1438,7 @@ h1, h2, h3 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* SECONDARY BUTTON (Contact Me) */
+/* SECONDARY BUTTON */
 .btn-secondary {
     display: inline-flex;
     align-items: center;
