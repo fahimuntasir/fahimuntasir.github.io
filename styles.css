@@ -737,6 +737,10 @@ h1, h2, h3 {
 .skill-icon {
     font-size: 2.8rem;
     margin-bottom: 20px;
+    display: inline-block;
+}
+
+.skill-icon i {
     background: linear-gradient(90deg, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     background-clip: text;
