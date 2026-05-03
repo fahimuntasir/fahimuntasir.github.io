@@ -300,8 +300,8 @@ const rotatingTextElement = document.querySelector('.rotating-text');
 if (rotatingTextElement) {
     const phrases = [
         "Computer Science Graduate",
-        "AI & Embedded Systems Enthusiast",
-        "Full-Stack Developer"
+        "Operations & Finance Professional",
+        "Data-Driven Problem Solver"
     ];
     
     let phraseIndex = 0;
