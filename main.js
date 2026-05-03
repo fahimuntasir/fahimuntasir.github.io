@@ -324,18 +324,18 @@ if (rotatingTextElement) {
         
         if (!isDeleting && charIndex === currentPhrase.length) {
             isDeleting = true;
-            setTimeout(typeEffect, 2000);
+            setTimeout(typeEffect, 1000); // ← Changed: 2000 → 1000 (faster pause)
             return;
         }
         
         if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            setTimeout(typeEffect, 300);
+            setTimeout(typeEffect, 150); // ← Changed: 300 → 150 (faster next phrase)
             return;
         }
         
-        const speed = isDeleting ? 50 : 100;
+        const speed = isDeleting ? 30 : 50; // ← Changed: 50/100 → 30/50 (faster typing)
         setTimeout(typeEffect, speed);
     }
     
