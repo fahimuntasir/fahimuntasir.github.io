@@ -292,7 +292,7 @@ mediaQuery.addEventListener('change', e => {
 });
 
 /* =========================
-   ROTATING TEXT (HERO SUBTITLE)
+   ROTATING TEXT (HERO SUBTITLE) - SMOOTH VERSION
 ========================= */
 
 const rotatingTextElement = document.querySelector('.rotating-text');
@@ -307,37 +307,46 @@ if (rotatingTextElement) {
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let currentText = "";
-
+    
+    // SMOOTH timing values
+    const typeSpeed = 40;      // faster typing (was 100)
+    const deleteSpeed = 20;    // faster deleting (was 50)
+    const pauseEnd = 800;      // shorter pause at end (was 2000)
+    const pauseStart = 100;    // shorter pause before typing next (was 300)
+    
     function typeEffect() {
         const currentPhrase = phrases[phraseIndex];
         
         if (isDeleting) {
-            currentText = currentPhrase.substring(0, charIndex - 1);
+            // Deleting characters
             charIndex--;
+            rotatingTextElement.textContent = currentPhrase.substring(0, charIndex);
         } else {
-            currentText = currentPhrase.substring(0, charIndex + 1);
+            // Typing characters
             charIndex++;
+            rotatingTextElement.textContent = currentPhrase.substring(0, charIndex);
         }
         
-        rotatingTextElement.textContent = currentText;
-        
+        // Word is fully typed
         if (!isDeleting && charIndex === currentPhrase.length) {
             isDeleting = true;
-            setTimeout(typeEffect, 1000); // ← Changed: 2000 → 1000 (faster pause)
+            setTimeout(typeEffect, pauseEnd);
             return;
         }
         
+        // Word is fully deleted
         if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            setTimeout(typeEffect, 150); // ← Changed: 300 → 150 (faster next phrase)
+            setTimeout(typeEffect, pauseStart);
             return;
         }
         
-        const speed = isDeleting ? 30 : 50; // ← Changed: 50/100 → 30/50 (faster typing)
+        // Continue typing or deleting with smooth timing
+        const speed = isDeleting ? deleteSpeed : typeSpeed;
         setTimeout(typeEffect, speed);
     }
     
-    typeEffect();
+    // Start the animation
+    setTimeout(typeEffect, 100);
 }
