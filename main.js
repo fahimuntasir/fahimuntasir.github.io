@@ -290,3 +290,54 @@ mediaQuery.addEventListener('change', e => {
         updateIcon();
     }
 });
+
+/* =========================
+   ROTATING TEXT (HERO SUBTITLE)
+========================= */
+
+const rotatingTextElement = document.querySelector('.rotating-text');
+
+if (rotatingTextElement) {
+    const phrases = [
+        "Computer Science Graduate",
+        "AI & Embedded Systems Enthusiast",
+        "Full-Stack Developer"
+    ];
+    
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let currentText = "";
+
+    function typeEffect() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            currentText = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            currentText = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        
+        rotatingTextElement.textContent = currentText;
+        
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 2000);
+            return;
+        }
+        
+        if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            setTimeout(typeEffect, 300);
+            return;
+        }
+        
+        const speed = isDeleting ? 50 : 100;
+        setTimeout(typeEffect, speed);
+    }
+    
+    typeEffect();
+}
