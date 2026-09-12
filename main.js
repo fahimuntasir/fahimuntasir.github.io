@@ -299,10 +299,11 @@ const rotatingTextElement = document.querySelector('.rotating-text');
 
 if (rotatingTextElement) {
     const phrases = [
-       "Computer Science Graduate",
-       "Technical Support Engineer",
-       "AI & Embedded Systems Enthusiast",
-       "Multidisciplinary Problem Solver"
+       "Information & Communication Engineering Student 🎓",
+       "Software & Embedded Systems Developer 💻",
+       "Technical Support Engineer 🛠️",
+       "AI & Intelligent Systems Enthusiast 🤖",
+       "Multidisciplinary Problem Solver 🔧"
     ];
     
     let phraseIndex = 0;
