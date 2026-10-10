@@ -1,11 +1,5 @@
-/* =========================
-   FOOTER YEAR
-========================= */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* =========================
-   MOBILE MENU
-========================= */
 const menuBtn = document.querySelector(".mobile-menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
@@ -15,9 +9,6 @@ if (menuBtn) {
     });
 }
 
-/* =========================
-   SMOOTH SCROLLING
-========================= */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -37,9 +28,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-/* =========================
-   RECOMMENDATION TABS
-========================= */
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");
 
@@ -53,9 +41,6 @@ tabButtons.forEach(btn => {
     });
 });
 
-/* =========================
-   TOGGLE DETAILS (MERGED)
-========================= */
 function toggleDetails(button, openText, closeText) {
    const card = button.closest(".experience-card");
     const details = button.nextElementSibling;
@@ -71,9 +56,6 @@ function toggleDetails(button, openText, closeText) {
     }
 }
 
-/* =========================
-   EDUCATION TOGGLE
-========================= */
 function toggleEducation(button) {
     const section = document.querySelector(".education-hidden");
 
@@ -86,15 +68,12 @@ function toggleEducation(button) {
     }
 }
 
-/* =========================
-   OWL CAROUSEL
-========================= */
 $(document).ready(function () {
     $(".recommendations-carousel").owlCarousel({
         loop: true,
         margin: 30,
         autoplay: true,
-        autoplayTimeout: 3000,
+        autoplayTimeout: 5000,
         autoplayHoverPause: true,
         smartSpeed: 1000,
         dots: true,
@@ -107,9 +86,6 @@ $(document).ready(function () {
     });
 });
 
-/* =========================
-   BACK TO TOP BUTTON
-========================= */
 const backToTopBtn = document.getElementById("backToTop");
 
 if (backToTopBtn) {
@@ -129,9 +105,6 @@ if (backToTopBtn) {
     });
 }
 
-/* =========================
-   CERTIFICATE MODAL
-========================= */
 const modal = document.getElementById("certificateModal");
 const modalImg = document.getElementById("certificateImage");
 const modalClose = document.querySelector(".modal-close");
@@ -158,10 +131,6 @@ function closeModal() {
     document.body.style.overflow = "";
 }
 
-/* =========================
-   EXPERIENCE SLIDER
-========================= */
-
 const slider = document.getElementById("experienceSlider");
 let cards = Array.from(document.querySelectorAll(".experience-card"));
 
@@ -169,13 +138,11 @@ const gap = 30;
 let index = 1;
 let isAnimating = false;
 
-// clone first two and last two cards (because 2 cards are visible)
 const firstClone1 = cards[0].cloneNode(true);
 const firstClone2 = cards[1].cloneNode(true);
 const lastClone1 = cards[cards.length - 1].cloneNode(true);
 const lastClone2 = cards[cards.length - 2].cloneNode(true);
 
-// add clones
 slider.appendChild(firstClone1);
 slider.appendChild(firstClone2);
 slider.insertBefore(lastClone1, slider.firstChild);
@@ -183,17 +150,14 @@ slider.insertBefore(lastClone2, slider.firstChild);
 
 cards = slider.querySelectorAll(".experience-card");
 
-// start after the prepended clones
 index = 2;
 
 function getCardWidth(){
     return cards[0].offsetWidth + gap;
 }
 
-// initial position
 slider.style.transform = `translateX(-${getCardWidth() * index}px)`;
 
-// scroll direction
 function scrollExperience(direction){
 
     if(isAnimating) return;
@@ -208,16 +172,14 @@ function scrollExperience(direction){
 slider.addEventListener("transitionend", ()=>{
 
     const width = getCardWidth();
-    const realCount = cards.length - 4; // remove clones
+    const realCount = cards.length - 4;
 
-    // right side reset
     if(index >= realCount + 2){
         slider.style.transition = "none";
         index = 2;
         slider.style.transform = `translateX(-${width * index}px)`;
     }
 
-    // left side reset
     if(index < 2){
         slider.style.transition = "none";
         index = realCount + 1;
@@ -227,38 +189,30 @@ slider.addEventListener("transitionend", ()=>{
     isAnimating = false;
 });
 
-// keep alignment correct on resize
 window.addEventListener("resize", ()=>{
     slider.style.transition = "none";
     slider.style.transform = `translateX(-${getCardWidth() * index}px)`;
 });
 
-/* =========================
-   DARK MODE (AUTO + SAVE)
-========================= */
-
 const themeToggle = document.getElementById("theme-toggle");
 
-// Load saved theme
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
+    document.documentElement.classList.add("dark-mode");
 } else if (savedTheme === "light") {
-    document.body.classList.remove("dark-mode");
+    document.documentElement.classList.remove("dark-mode");
 } else {
-    // No saved preference → follow system
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add("dark-mode");
+    if (true) {
+        document.documentElement.classList.add("dark-mode");
     }
 }
 
-// Toggle manually
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+        document.documentElement.classList.toggle("dark-mode");
 
-        if (document.body.classList.contains("dark-mode")) {
+        if (document.documentElement.classList.contains("dark-mode")) {
             localStorage.setItem("theme", "dark");
         } else {
             localStorage.setItem("theme", "light");
@@ -268,75 +222,61 @@ if (themeToggle) {
     });
 }
 
-// Change icon
 function updateIcon() {
     if (themeToggle) {
         themeToggle.textContent =
-            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+            document.documentElement.classList.contains("dark-mode") ? "Light" : "Dark";
     }
 }
 
 updateIcon();
 
-/* =========================
-   DARK MODE AUTO SWITCH ON SYSTEM CHANGE
-========================= */
-
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 mediaQuery.addEventListener('change', e => {
     if (!localStorage.getItem("theme")) {
-        document.body.classList.toggle("dark-mode", e.matches);
+        document.documentElement.classList.toggle("dark-mode", e.matches);
         updateIcon();
     }
 });
-
-/* =========================
-   ROTATING TEXT (HERO SUBTITLE) - SMOOTH VERSION
-========================= */
 
 const rotatingTextElement = document.querySelector('.rotating-text');
 
 if (rotatingTextElement) {
     const phrases = [
-       "Information & Communication Engineering Student 🎓",
-       "Software & Embedded Systems Developer 💻",
-       "Technical Support Engineer 🛠️",
-       "AI & Intelligent Systems Enthusiast 🤖",
-       "Multidisciplinary Problem Solver 🔧"
+       "Information & Communication Engineering Student",
+       "Software & Embedded Systems Developer",
+       "Technical Support Engineer",
+       "AI & Intelligent Systems Enthusiast",
+       "Multidisciplinary Problem Solver"
     ];
     
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     
-    // SMOOTH timing values
-    const typeSpeed = 40;      // faster typing (was 100)
-    const deleteSpeed = 20;    // faster deleting (was 50)
-    const pauseEnd = 800;      // shorter pause at end (was 2000)
-    const pauseStart = 100;    // shorter pause before typing next (was 300)
+    const typeSpeed = 40;
+    const deleteSpeed = 20;
+    const pauseEnd = 800;
+    const pauseStart = 100;
     
     function typeEffect() {
         const currentPhrase = phrases[phraseIndex];
         
         if (isDeleting) {
-            // Deleting characters
             charIndex--;
             rotatingTextElement.textContent = currentPhrase.substring(0, charIndex);
         } else {
-            // Typing characters
             charIndex++;
             rotatingTextElement.textContent = currentPhrase.substring(0, charIndex);
         }
         
-        // Word is fully typed
         if (!isDeleting && charIndex === currentPhrase.length) {
             isDeleting = true;
             setTimeout(typeEffect, pauseEnd);
             return;
         }
         
-        // Word is fully deleted
         if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
@@ -344,11 +284,30 @@ if (rotatingTextElement) {
             return;
         }
         
-        // Continue typing or deleting with smooth timing
         const speed = isDeleting ? deleteSpeed : typeSpeed;
         setTimeout(typeEffect, speed);
     }
     
-    // Start the animation
     setTimeout(typeEffect, 100);
 }
+
+/* POLISH: progress bar, navbar state, active link, reveal */
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const bar = document.createElement("div"); bar.className = "progress"; document.body.prepend(bar);
+const navbar = document.querySelector(".navbar");
+function onScroll() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    navbar.classList.toggle("scrolled", scrollY > 20);
+}
+addEventListener("scroll", onScroll, { passive: true }); onScroll();
+const navAnchors = [...document.querySelectorAll(".nav-links a")];
+const spy = new IntersectionObserver(es => es.forEach(en => {
+    if (en.isIntersecting) navAnchors.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
+}), { rootMargin: "-40% 0px -55% 0px" });
+document.querySelectorAll("section[id]").forEach(s => spy.observe(s));
+if (!reduceMotion) {
+    const rv = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); rv.unobserve(en.target); } }), { threshold: 0.08 });
+    document.querySelectorAll("section:not(.hero) .container").forEach(c => { c.classList.add("reveal"); rv.observe(c); });
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("show")) closeModal(); });
