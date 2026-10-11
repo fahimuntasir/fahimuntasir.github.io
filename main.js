@@ -198,7 +198,7 @@ const gap = 30;
 let index = 1;
 let isAnimating = false;
 
-if (slider && cards.length >= 4) {
+if (slider && cards.length >= 2) {
   // Clone cards for infinite loop
   const firstClone1 = cards[0].cloneNode(true);
   const firstClone2 = cards[1].cloneNode(true);
@@ -259,9 +259,11 @@ if (slider && cards.length >= 4) {
 
 /* ---------- 12. THEME TOGGLE (dark / light) ---------- */
 const themeToggle = document.getElementById("theme-toggle");
-const savedTheme = localStorage.getItem("theme");
 
-// Apply saved or system preference
+let savedTheme = null;
+try { savedTheme = localStorage.getItem("theme"); } catch (e) {}
+
+// Apply saved theme, or default to dark
 if (savedTheme === "dark") {
   document.documentElement.classList.add("dark-mode");
 } else if (savedTheme === "light") {
@@ -275,10 +277,12 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark-mode");
 
-    localStorage.setItem(
-      "theme",
-      document.documentElement.classList.contains("dark-mode") ? "dark" : "light"
-    );
+    try {
+      localStorage.setItem(
+        "theme",
+        document.documentElement.classList.contains("dark-mode") ? "dark" : "light"
+      );
+    } catch (e) {}
 
     updateIcon();
   });
@@ -295,16 +299,6 @@ function updateIcon() {
 }
 
 updateIcon();
-
-// React to system theme changes (if user hasn't set a preference)
-const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-mediaQuery.addEventListener("change", (e) => {
-  if (!localStorage.getItem("theme")) {
-    document.documentElement.classList.toggle("dark-mode", e.matches);
-    updateIcon();
-  }
-});
 
 /* ---------- 13. ROTATING TEXT (hero subtitle) ---------- */
 const rotatingTextElement = document.querySelector(".rotating-text");
@@ -417,10 +411,3 @@ if (!reduceMotion) {
       rv.observe(c);
     });
 }
-
-/* ---------- 15. GLOBAL KEYBOARD SHORTCUTS ---------- */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal?.classList.contains("show")) {
-    closeModal();
-  }
-});
