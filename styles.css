@@ -502,8 +502,8 @@ section:nth-of-type(even):not(.hero) {
   justify-content: center;
 }
 
-.exp-arrow.left  { left: -15px; }
-.exp-arrow.right { right: -15px; }
+.exp-arrow.left  { left: 8px; }
+.exp-arrow.right { right: 8px; }
 
 .exp-arrow:hover {
   background: var(--ac);
