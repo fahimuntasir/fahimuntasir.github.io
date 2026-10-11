@@ -382,7 +382,7 @@ section:nth-of-type(even):not(.hero) {
   line-height: 1.8;
   color: #444;
   margin-bottom: 14px;
-  text-align: left;
+  text-align: justify;
 }
 
 .dark-mode .about-text p {
