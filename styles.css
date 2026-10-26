@@ -318,3 +318,86 @@ h3 { letter-spacing: -.025em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* =========================================================
+   Focused refinements: Education, Experience, Training,
+   and Skills/Recognition. All other sections are unchanged.
+   ========================================================= */
+
+/* Education: compact academic cards with a stronger hierarchy. */
+.education-card { position: relative; gap: 17px; padding: 20px 22px; align-items: flex-start; overflow: hidden; }
+.education-card--current::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--accent); }
+.education-logo { width: 59px; height: 59px; border-radius: 13px; padding: 6px; }
+.education-info { flex: 1; min-width: 0; }
+.education-card-meta { display: flex; align-items: center; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
+.education-status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; border-radius: 100px; background: var(--accent-soft); color: var(--accent); font-size: .68rem; line-height: 1.2; font-weight: 700; }
+.education-status i { font-size: .35rem; }
+.education-card h3 { margin: 7px 0 2px; font-size: 1.07rem; letter-spacing: -.03em; }
+.education-card p.education-field { margin: 0 0 12px; font-size: .88rem; color: var(--text); }
+.education-footer { padding-top: 10px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 5px 12px; }
+.education-university { color: var(--muted); font-size: .79rem; line-height: 1.5; }
+.education-place { color: var(--muted); font-size: .77rem; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.country-flag { width: 20px; height: 13px; object-fit: cover; display: inline-block; flex: 0 0 20px; border: 1px solid rgba(15, 23, 42, .08); border-radius: 2px; vertical-align: middle; }
+
+/* Distinct work arrangement tags, without changing job order/details. */
+.job-title-line { align-items: flex-start; }
+.job-role { min-width: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 11px; margin-bottom: 6px; }
+.job-title-line .job-role h3 { margin: 0; }
+.work-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 7px; font: 700 .7rem/1.25 var(--font-body); white-space: nowrap; }
+.work-badge i { font-size: .7rem; }
+.work-badge--remote { background: #e4f6f2; color: #0f766e; }
+.work-badge--fulltime { background: #e8eeff; color: #315cd5; }
+.dark-mode .work-badge--remote { background: #123c3c; color: #78dfc6; }
+.dark-mode .work-badge--fulltime { background: #203962; color: #b4ccff; }
+.job-location { display: inline-flex; flex-wrap: nowrap; align-items: center; gap: 7px; vertical-align: middle; }
+.job-more[open] > ul { background: var(--soft); border: 1px solid var(--border); border-radius: 10px; margin-top: 12px; padding: 13px 15px 13px 31px; }
+
+/* Expandable descriptions for each training; original outer expander retained. */
+.training-list { gap: 0; padding-bottom: 15px; }
+.training-item { border-top: 1px solid var(--border); }
+.training-item > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px 25px; cursor: pointer; padding: 14px 0; list-style: none; }
+.training-item > summary::-webkit-details-marker { display: none; }
+.training-item > summary strong { flex: 1; font-size: .86rem; font-weight: 700; }
+.training-item .training-meta { flex: 0 1 auto; display: inline-flex; align-items: center; gap: 9px; color: var(--muted); text-align: right; font-size: .78rem; }
+.training-item .training-meta i { color: var(--accent); flex-shrink: 0; margin: 0; transition: transform .2s; }
+.training-item[open] .training-meta i { transform: rotate(180deg); }
+.training-item > summary:hover strong { color: var(--accent); }
+.training-detail-body { margin: 0 0 14px; padding: 13px 17px; border-radius: 10px; background: var(--soft); border: 1px solid var(--border); }
+.training-detail-body p { color: var(--muted); font-size: .82rem; margin: 0; line-height: 1.7; }
+.training-detail-body p + p { margin-top: 7px; }
+.training-detail-body strong { color: var(--text); }
+
+/* 60 / 40 proportion: grouped, credible skills; familiar award rows. */
+.highlights-layout { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+.skill-groups { display: grid; gap: 15px; }
+.skill-group h4 { font: 700 .78rem/1.35 var(--font-body); color: var(--muted); margin: 0 0 8px; }
+.skill-chips { gap: 8px; }
+.skill-chips span { padding: 7px 11px; font-size: .78rem; }
+.secondary-panel-title { margin-top: 23px; }
+.awards-panel .award-row { padding: 18px 0; }
+.awards-panel .award-row:focus-visible { border-radius: 6px; }
+
+@media (max-width: 980px) and (min-width: 801px) {
+  .highlights-layout { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+  .education-footer { display: block; }
+  .education-place { margin-top: 7px; }
+}
+@media (max-width: 800px) {
+  .highlights-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .education-card { padding: 17px; gap: 12px; }
+  .education-logo { width: 48px; height: 48px; padding: 5px; }
+  .education-card-meta { align-items: start; }
+  .education-status { font-size: .62rem; }
+  .education-card h3 { font-size: .98rem; }
+  .education-university { display: block; }
+  .education-place { margin-top: 5px; white-space: normal; }
+  .job-title-line { display: block; }
+  .job-role { gap: 7px; margin-bottom: 5px; }
+  .job-title-line .job-role h3 { font-size: 1rem; }
+  .job-location { display: inline-flex; white-space: normal; }
+  .training-item > summary { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .training-item .training-meta { text-align: left; font-size: .75rem; }
+  .training-detail-body { padding: 12px; }
+}
