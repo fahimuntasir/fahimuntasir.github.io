@@ -76,3 +76,4 @@
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 })();
+
