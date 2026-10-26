@@ -401,3 +401,66 @@ h3 { letter-spacing: -.025em; }
   .training-item .training-meta { text-align: left; font-size: .75rem; }
   .training-detail-body { padding: 12px; }
 }
+
+
+/* ============================================================
+   Final visual polish — education, experience and honours only
+   ============================================================ */
+
+/* Distinct degree statuses: warm amber for ongoing, green for finished. */
+.education-status { gap: 7px; padding: 6px 11px; font-size: .68rem; letter-spacing: .01em; }
+.education-status--ongoing { color: #99520a; background: #fff1d8; }
+.education-status--ongoing i { color: #d38a19; font-size: .41rem; }
+.education-status--completed { color: #176b48; background: #e4f6ec; }
+.education-status--completed i { color: #249160; font-size: .72rem; }
+.dark-mode .education-status--ongoing { color: #ffda99; background: #493118; }
+.dark-mode .education-status--ongoing i { color: #ffc266; }
+.dark-mode .education-status--completed { color: #a3eac5; background: #183e34; }
+.dark-mode .education-status--completed i { color: #78d9a8; }
+/* No horizontal dividing bar between course details and the institution. */
+.education-card p.education-field { margin-bottom: 9px; }
+.education-footer { border-top: 0; padding-top: 2px; align-items: baseline; gap: 4px 12px; }
+.education-place { gap: 8px; }
+.education-place .country-flag { margin-left: 1px; }
+
+/* Compact job rows; low-contrast date chips; purple distinguishes full-time from remote teal. */
+.job-card { grid-template-columns: 48px minmax(0, 1fr); gap: 16px; padding: 20px 26px; }
+.job-logo { height: 46px; width: 46px; border-radius: 12px; padding: 7px; }
+.job-title-line .job-role h3 { font-size: 1.035rem; }
+.job-role { gap: 7px 9px; margin-bottom: 3px; }
+.job-company { font-size: .82rem; margin-bottom: 5px; }
+.job-main > p { font-size: .86rem; line-height: 1.55; }
+.job-more { margin-top: 7px; }
+.job-more summary { font-size: .8rem; }
+.work-badge { font-size: .67rem; padding: 4px 9px; }
+.work-badge--fulltime { color: #6d39a9; background: #f1e9fa; }
+.dark-mode .work-badge--fulltime { color: #dcc0ff; background: #3b294e; }
+.job-period { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 600; line-height: 1.25; color: var(--muted); border: 1px solid var(--border); border-radius: 7px; padding: 6px 9px; background: var(--bg); white-space: nowrap; }
+.job-period i { color: var(--muted); font-size: .71rem; }
+
+/* Award cards now echo the quiet bordered surfaces used by the technical toolkit.
+   Both original certificate links and external-link arrow icons are preserved. */
+.awards-panel { display: flex; flex-direction: column; gap: 12px; }
+.awards-panel > h3 { margin-bottom: 9px; }
+.awards-panel .award-row { display: flex; align-items: center; gap: 13px; padding: 17px 15px; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+.awards-panel .award-row + .award-row { border-top: 1px solid var(--border); }
+.awards-panel .award-row:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-1px); }
+.awards-panel .award-row:focus-visible { border-radius: 12px; }
+.award-symbol { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 10px; background: var(--accent-soft); }
+.awards-panel .award-symbol i { font-size: 1.02rem; color: var(--accent); margin: 0; }
+.award-row > div { flex: 1; min-width: 0; gap: 5px; }
+.award-row strong { display: block; color: var(--text); font-size: .85rem; line-height: 1.45; }
+.award-row span:not(.award-symbol) { font-size: .76rem; line-height: 1.55; }
+.awards-panel .award-arrow { font-size: .79rem; color: var(--accent); margin-left: auto; }
+
+@media (max-width: 560px) {
+  .education-footer { border-top: 0; padding-top: 2px; }
+  .education-status { font-size: .62rem; padding: 5px 8px; }
+  .job-card { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 16px 13px; }
+  .job-logo { height: 40px; width: 40px; padding: 5px; }
+  .job-title-line .job-role h3 { font-size: .97rem; }
+  .job-period { margin: 6px 0 4px; font-size: .72rem; padding: 5px 8px; }
+  .awards-panel .award-row { padding: 13px 11px; gap: 10px; }
+  .award-symbol { width: 33px; height: 33px; flex-basis: 33px; }
+  .award-row strong { font-size: .81rem; }
+}
