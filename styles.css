@@ -155,7 +155,7 @@ h3 { letter-spacing: -.025em; }
 .more-projects > summary::-webkit-details-marker { display: none; }
 .more-projects > summary:hover { color: var(--accent); }
 .more-projects > summary i, .job-more summary i, .training-expander summary .fa-chevron-down { transition: transform .2s; }
-.more-projects[open] > summary i, .job-more[open] summary i, .training-expander[open] summary .fa-chevron-down { transform: rotate(180deg); }
+.more-projects[open] > summary i, .job-more[open] > summary i, .training-expander[open] > summary .fa-chevron-down { transform: rotate(180deg); }
 .mini-project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0 20px 20px; }
 .mini-project { border: 1px solid var(--border); padding: 22px; border-radius: 12px; }
 .mini-icon { font-size: 1.25rem; color: var(--accent); margin-bottom: 11px; }
@@ -320,146 +320,122 @@ h3 { letter-spacing: -.025em; }
 }
 
 /* =========================================================
-   Focused refinements: Education, Experience, Training,
-   and Skills/Recognition. All other sections are unchanged.
+   V3 REFINEMENTS: Education, Experience, Training, Recognition
    ========================================================= */
 
-/* Education: compact academic cards with a stronger hierarchy. */
-.education-card { position: relative; gap: 17px; padding: 20px 22px; align-items: flex-start; overflow: hidden; }
-.education-card--current::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--accent); }
+/* Education: matched blue-accent cards and balanced degree badges */
+.education-card { position: relative; overflow: hidden; gap: 17px; padding: 20px 22px; }
+.education-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--accent); }
 .education-logo { width: 59px; height: 59px; border-radius: 13px; padding: 6px; }
 .education-info { flex: 1; min-width: 0; }
-.education-card-meta { display: flex; align-items: center; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
-.education-status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; border-radius: 100px; background: var(--accent-soft); color: var(--accent); font-size: .68rem; line-height: 1.2; font-weight: 700; }
-.education-status i { font-size: .35rem; }
-.education-card h3 { margin: 7px 0 2px; font-size: 1.07rem; letter-spacing: -.03em; }
-.education-card p.education-field { margin: 0 0 12px; font-size: .88rem; color: var(--text); }
-.education-footer { padding-top: 10px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 5px 12px; }
-.education-university { color: var(--muted); font-size: .79rem; line-height: 1.5; }
-.education-place { color: var(--muted); font-size: .77rem; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
-.country-flag { width: 20px; height: 13px; object-fit: cover; display: inline-block; flex: 0 0 20px; border: 1px solid rgba(15, 23, 42, .08); border-radius: 2px; vertical-align: middle; }
-
-/* Distinct work arrangement tags, without changing job order/details. */
-.job-title-line { align-items: flex-start; }
-.job-role { min-width: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 11px; margin-bottom: 6px; }
-.job-title-line .job-role h3 { margin: 0; }
-.work-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 7px; font: 700 .7rem/1.25 var(--font-body); white-space: nowrap; }
-.work-badge i { font-size: .7rem; }
-.work-badge--remote { background: #e4f6f2; color: #0f766e; }
-.work-badge--fulltime { background: #e8eeff; color: #315cd5; }
-.dark-mode .work-badge--remote { background: #123c3c; color: #78dfc6; }
-.dark-mode .work-badge--fulltime { background: #203962; color: #b4ccff; }
-.job-location { display: inline-flex; flex-wrap: nowrap; align-items: center; gap: 7px; vertical-align: middle; }
-.job-more[open] > ul { background: var(--soft); border: 1px solid var(--border); border-radius: 10px; margin-top: 12px; padding: 13px 15px 13px 31px; }
-
-/* Expandable descriptions for each training; original outer expander retained. */
-.training-list { gap: 0; padding-bottom: 15px; }
-.training-item { border-top: 1px solid var(--border); }
-.training-item > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px 25px; cursor: pointer; padding: 14px 0; list-style: none; }
-.training-item > summary::-webkit-details-marker { display: none; }
-.training-item > summary strong { flex: 1; font-size: .86rem; font-weight: 700; }
-.training-item .training-meta { flex: 0 1 auto; display: inline-flex; align-items: center; gap: 9px; color: var(--muted); text-align: right; font-size: .78rem; }
-.training-item .training-meta i { color: var(--accent); flex-shrink: 0; margin: 0; transition: transform .2s; }
-.training-item[open] .training-meta i { transform: rotate(180deg); }
-.training-item > summary:hover strong { color: var(--accent); }
-.training-detail-body { margin: 0 0 14px; padding: 13px 17px; border-radius: 10px; background: var(--soft); border: 1px solid var(--border); }
-.training-detail-body p { color: var(--muted); font-size: .82rem; margin: 0; line-height: 1.7; }
-.training-detail-body p + p { margin-top: 7px; }
-.training-detail-body strong { color: var(--text); }
-
-/* 60 / 40 proportion: grouped, credible skills; familiar award rows. */
-.highlights-layout { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
-.skill-groups { display: grid; gap: 15px; }
-.skill-group h4 { font: 700 .78rem/1.35 var(--font-body); color: var(--muted); margin: 0 0 8px; }
-.skill-chips { gap: 8px; }
-.skill-chips span { padding: 7px 11px; font-size: .78rem; }
-.secondary-panel-title { margin-top: 23px; }
-.awards-panel .award-row { padding: 18px 0; }
-.awards-panel .award-row:focus-visible { border-radius: 6px; }
-
-@media (max-width: 980px) and (min-width: 801px) {
-  .highlights-layout { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
-  .education-footer { display: block; }
-  .education-place { margin-top: 7px; }
-}
-@media (max-width: 800px) {
-  .highlights-layout { grid-template-columns: 1fr; }
-}
-@media (max-width: 560px) {
-  .education-card { padding: 17px; gap: 12px; }
-  .education-logo { width: 48px; height: 48px; padding: 5px; }
-  .education-card-meta { align-items: start; }
-  .education-status { font-size: .62rem; }
-  .education-card h3 { font-size: .98rem; }
-  .education-university { display: block; }
-  .education-place { margin-top: 5px; white-space: normal; }
-  .job-title-line { display: block; }
-  .job-role { gap: 7px; margin-bottom: 5px; }
-  .job-title-line .job-role h3 { font-size: 1rem; }
-  .job-location { display: inline-flex; white-space: normal; }
-  .training-item > summary { flex-direction: column; align-items: flex-start; gap: 3px; }
-  .training-item .training-meta { text-align: left; font-size: .75rem; }
-  .training-detail-body { padding: 12px; }
-}
-
-
-/* ============================================================
-   Final visual polish — education, experience and honours only
-   ============================================================ */
-
-/* Distinct degree statuses: warm amber for ongoing, green for finished. */
-.education-status { gap: 7px; padding: 6px 11px; font-size: .68rem; letter-spacing: .01em; }
+.education-card-meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.education-card .small-label { display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border: 1px solid var(--border); background: var(--accent-soft); border-radius: 8px; font-size: .68rem; letter-spacing: 0; white-space: nowrap; }
+.education-card .small-label i { font-size: .72rem; }
+.education-status { display: inline-flex; align-items: center; gap: 7px; min-height: 28px; padding: 5px 10px; border-radius: 999px; font-size: .68rem; line-height: 1.2; font-weight: 700; white-space: nowrap; }
+.education-status i, .dark-mode .education-status i { font-size: .78rem; }
 .education-status--ongoing { color: #99520a; background: #fff1d8; }
-.education-status--ongoing i { color: #d38a19; font-size: .41rem; }
+.education-status--ongoing i { color: #b97713; }
 .education-status--completed { color: #176b48; background: #e4f6ec; }
-.education-status--completed i { color: #249160; font-size: .72rem; }
+.education-status--completed i { color: #249160; }
 .dark-mode .education-status--ongoing { color: #ffda99; background: #493118; }
 .dark-mode .education-status--ongoing i { color: #ffc266; }
 .dark-mode .education-status--completed { color: #a3eac5; background: #183e34; }
 .dark-mode .education-status--completed i { color: #78d9a8; }
-/* No horizontal dividing bar between course details and the institution. */
-.education-card p.education-field { margin-bottom: 9px; }
-.education-footer { border-top: 0; padding-top: 2px; align-items: baseline; gap: 4px 12px; }
-.education-place { gap: 8px; }
-.education-place .country-flag { margin-left: 1px; }
+.education-card h3 { margin: 8px 0 3px; font-size: 1.07rem; }
+.education-card p.education-field { margin: 0 0 12px; font-size: .88rem; }
+.education-footer { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 0; border: 0; }
+.education-university { color: var(--text); font-size: .84rem; font-weight: 700; line-height: 1.45; }
+.education-place { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; color: var(--muted); font-size: .76rem; line-height: 1.5; }
+.education-place > i { color: var(--accent); font-size: .72rem; }
+.country-flag { width: 20px; height: 13px; flex: 0 0 20px; display: inline-block; vertical-align: middle; object-fit: cover; border: 1px solid rgba(15,23,42,.08); border-radius: 2px; }
 
-/* Compact job rows; low-contrast date chips; purple distinguishes full-time from remote teal. */
+/* Experience: compact entries, company first, location underneath */
 .job-card { grid-template-columns: 48px minmax(0, 1fr); gap: 16px; padding: 20px 26px; }
-.job-logo { height: 46px; width: 46px; border-radius: 12px; padding: 7px; }
-.job-title-line .job-role h3 { font-size: 1.035rem; }
-.job-role { gap: 7px 9px; margin-bottom: 3px; }
-.job-company { font-size: .82rem; margin-bottom: 5px; }
+.job-logo { width: 46px; height: 46px; padding: 7px; border-radius: 12px; }
+.job-title-line { align-items: flex-start; }
+.job-role { display: flex; align-items: center; flex-wrap: wrap; gap: 7px 9px; margin-bottom: 3px; }
+.job-title-line .job-role h3 { margin: 0; font-size: 1.035rem; }
+.work-badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 7px; padding: 4px 9px; font: 700 .67rem/1.25 var(--font-body); white-space: nowrap; }
+.work-badge i { font-size: .7rem; }
+.work-badge--remote { background: #e4f6f2; color: #0f766e; }
+.work-badge--fulltime { background: #f1e9fa; color: #6d39a9; }
+.dark-mode .work-badge--remote { background: #123c3c; color: #78dfc6; }
+.dark-mode .work-badge--fulltime { background: #3b294e; color: #dcc0ff; }
+.job-period { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border); border-radius: 7px; background: var(--bg); color: var(--muted); padding: 6px 9px; font-size: .75rem; line-height: 1.25; font-weight: 600; white-space: nowrap; }
+.job-period i { font-size: .71rem; }
+.job-company { margin-bottom: 1px; font-size: .82rem; }
+.job-location { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; color: var(--muted); font-size: .75rem; line-height: 1.5; }
+.job-location > i { color: var(--muted); font-size: .72rem; }
 .job-main > p { font-size: .86rem; line-height: 1.55; }
 .job-more { margin-top: 7px; }
 .job-more summary { font-size: .8rem; }
-.work-badge { font-size: .67rem; padding: 4px 9px; }
-.work-badge--fulltime { color: #6d39a9; background: #f1e9fa; }
-.dark-mode .work-badge--fulltime { color: #dcc0ff; background: #3b294e; }
-.job-period { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 600; line-height: 1.25; color: var(--muted); border: 1px solid var(--border); border-radius: 7px; padding: 6px 9px; background: var(--bg); white-space: nowrap; }
-.job-period i { color: var(--muted); font-size: .71rem; }
+.job-more[open] > ul { background: var(--soft); border: 1px solid var(--border); border-radius: 10px; margin-top: 12px; padding: 13px 15px 13px 31px; }
 
-/* Award cards now echo the quiet bordered surfaces used by the technical toolkit.
-   Both original certificate links and external-link arrow icons are preserved. */
+/* Training: independent disclosure arrows; each metadata item has its role */
+.training-list { gap: 0; padding-bottom: 15px; }
+.training-item { border-top: 1px solid var(--border); }
+.training-item > summary { display: flex; align-items: center; gap: 12px; padding: 14px 0; list-style: none; cursor: pointer; }
+.training-item > summary::-webkit-details-marker { display: none; }
+.training-item > summary > strong { flex: 0 1 39%; font-size: .86rem; line-height: 1.5; }
+.training-item > summary:hover > strong { color: var(--accent); }
+.training-item .training-meta { display: inline-flex; flex: 1; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px 12px; text-align: right; }
+.training-meta .training-place, .training-meta .training-date { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; color: var(--muted); }
+.training-meta .training-place i, .training-meta .training-date i { color: var(--muted); font-size: .71rem; }
+.training-meta .training-org { display: inline-flex; align-items: center; padding: 3px 7px; border-radius: 6px; color: var(--accent); background: var(--accent-soft); font-size: .69rem; font-weight: 700; white-space: nowrap; }
+.training-item > summary > .training-arrow { flex: 0 0 auto; color: var(--accent); font-size: .78rem; transform: rotate(0deg); transition: transform .2s; }
+.training-expander .training-item[open] > summary > .training-arrow { transform: rotate(180deg); }
+.training-detail-body { margin: 0 0 14px; padding: 13px 17px; border-radius: 10px; border: 1px solid var(--border); background: var(--soft); }
+.training-detail-body p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.7; }
+.training-detail-body p + p { margin-top: 7px; }
+.training-detail-body strong { color: var(--text); }
+
+/* Preserved skill groups and award-arrow links from V2 */
+.highlights-layout { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+.skill-groups { display: grid; gap: 15px; }
+.skill-group h4 { margin: 0 0 8px; font: 700 .78rem/1.35 var(--font-body); color: var(--muted); }
+.skill-chips { gap: 8px; }
+.skill-chips span { padding: 7px 11px; font-size: .78rem; }
+.secondary-panel-title { margin-top: 23px; }
 .awards-panel { display: flex; flex-direction: column; gap: 12px; }
 .awards-panel > h3 { margin-bottom: 9px; }
-.awards-panel .award-row { display: flex; align-items: center; gap: 13px; padding: 17px 15px; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+.awards-panel .award-row { display: flex; align-items: center; gap: 13px; padding: 17px 15px; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; transition: border-color .2s, background .2s, transform .2s; }
 .awards-panel .award-row + .award-row { border-top: 1px solid var(--border); }
 .awards-panel .award-row:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-1px); }
 .awards-panel .award-row:focus-visible { border-radius: 12px; }
 .award-symbol { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 10px; background: var(--accent-soft); }
-.awards-panel .award-symbol i { font-size: 1.02rem; color: var(--accent); margin: 0; }
+.awards-panel .award-symbol i { color: var(--accent); font-size: 1.02rem; }
 .award-row > div { flex: 1; min-width: 0; gap: 5px; }
 .award-row strong { display: block; color: var(--text); font-size: .85rem; line-height: 1.45; }
 .award-row span:not(.award-symbol) { font-size: .76rem; line-height: 1.55; }
-.awards-panel .award-arrow { font-size: .79rem; color: var(--accent); margin-left: auto; }
+.awards-panel .award-arrow { font-size: .79rem; margin-left: auto; }
 
+@media (max-width: 980px) and (min-width: 801px) {
+  .highlights-layout { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+}
+@media (max-width: 800px) {
+  .highlights-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .education-card-meta { align-items: flex-start; }
+  .education-card .small-label { font-size: .63rem; padding: 5px 8px; }
+  .education-status { min-height: 26px; }
+  .training-item > summary { display: grid; grid-template-columns: minmax(0,1fr) 18px; align-items: center; gap: 5px 10px; }
+  .training-item > summary > strong { grid-column: 1; grid-row: 1; }
+  .training-item .training-meta { grid-column: 1; grid-row: 2; justify-content: flex-start; text-align: left; gap: 6px 10px; }
+  .training-item .training-arrow { grid-column: 2; grid-row: 1 / 3; justify-self: end; }
+}
 @media (max-width: 560px) {
-  .education-footer { border-top: 0; padding-top: 2px; }
+  .education-card { padding: 17px; gap: 12px; }
+  .education-logo { width: 48px; height: 48px; padding: 5px; }
+  .education-card h3 { font-size: .98rem; }
   .education-status { font-size: .62rem; padding: 5px 8px; }
   .job-card { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 16px 13px; }
-  .job-logo { height: 40px; width: 40px; padding: 5px; }
+  .job-logo { width: 40px; height: 40px; padding: 5px; }
+  .job-title-line { display: block; }
   .job-title-line .job-role h3 { font-size: .97rem; }
   .job-period { margin: 6px 0 4px; font-size: .72rem; padding: 5px 8px; }
+  .training-list { padding: 0 15px 20px; }
+  .training-detail-body { padding: 12px; }
   .awards-panel .award-row { padding: 13px 11px; gap: 10px; }
   .award-symbol { width: 33px; height: 33px; flex-basis: 33px; }
   .award-row strong { font-size: .81rem; }
