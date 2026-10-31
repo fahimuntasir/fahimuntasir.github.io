@@ -1,4 +1,5 @@
-/* Minimal interactions for a fast, accessible one-page portfolio. */
+
+/* Fast, accessible interactions for the one-page portfolio. */
 (() => {
   'use strict';
 
@@ -12,20 +13,21 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
-  // Keep the original user's preference across visits; light is the default.
+  // Respect the saved theme preference (applied early in index.html).
   function setThemeIcon() {
     if (!themeButton) return;
     const dark = root.classList.contains('dark-mode');
     themeButton.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     themeButton.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
-    themeButton.querySelector('i').className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    const icon = themeButton.querySelector('i');
+    if (icon) icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0c1727' : '#f8fafc');
   }
   setThemeIcon();
   themeButton?.addEventListener('click', () => {
     root.classList.toggle('dark-mode');
     try { localStorage.setItem('portfolio-theme', root.classList.contains('dark-mode') ? 'dark' : 'light'); }
-    catch (e) { /* Keep working when storage is disabled. */ }
+    catch (e) { /* The toggle still works if storage is unavailable. */ }
     setThemeIcon();
   });
 
@@ -37,32 +39,33 @@
     if (icon) icon.className = 'fa-solid fa-bars';
   }
   menuButton?.addEventListener('click', () => {
+    if (!navigation) return;
     const open = !navigation.classList.contains('open');
     navigation.classList.toggle('open', open);
     menuButton.setAttribute('aria-expanded', String(open));
     menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    menuButton.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    const icon = menuButton.querySelector('i');
+    if (icon) icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
   });
-  navigation?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-  document.addEventListener('click', e => {
-    if (navigation?.classList.contains('open') && !navigation.contains(e.target) && !menuButton?.contains(e.target)) closeMenu();
+  navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+  document.addEventListener('click', event => {
+    if (navigation?.classList.contains('open') && !navigation.contains(event.target) && !menuButton?.contains(event.target)) closeMenu();
   });
   window.addEventListener('resize', () => { if (window.innerWidth > 800) closeMenu(); });
 
-  // The active navigation link follows the section currently on screen.
+  // Highlight the navigation link corresponding to the visible section.
   const watchedSections = [...document.querySelectorAll('#home, #about, #projects, #experience, #contact')];
   function setActiveLink(id) {
-    navLinks.forEach(a => {
-      const active = a.getAttribute('href') === `#${id}`;
-      a.classList.toggle('active', active);
-      if (active) a.setAttribute('aria-current', 'location');
-      else a.removeAttribute('aria-current');
+    navLinks.forEach(link => {
+      const active = link.getAttribute('href') === `#${id}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
   }
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
-      // Of visible intersecting sections, select the one closest to top.
       const intersecting = entries.filter(entry => entry.isIntersecting)
         .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
       if (intersecting.length) setActiveLink(intersecting[0].target.id);
@@ -71,7 +74,6 @@
   }
   navLinks.forEach(link => link.addEventListener('click', () => setActiveLink(link.hash.slice(1))));
 
-  // A low-cost header change instead of a heavy animation library.
   const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 12);
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
