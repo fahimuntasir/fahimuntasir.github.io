@@ -138,7 +138,7 @@ h3 { letter-spacing: -.025em; }
 .project-visual::before { content: ''; position: absolute; width: 230px; height: 230px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; right: -65px; top: -70px; box-shadow: 0 0 0 33px rgba(255,255,255,.045), 0 0 0 72px rgba(255,255,255,.035); z-index: -1; }
 .visual-embedded { background: linear-gradient(125deg, #183956, #327ba0); }
 .visual-algorithm { background: linear-gradient(125deg, #172d4b, #3152a1); }
-.visual-inventory { background: linear-gradient(125deg, #1d4665, #236d8f); }
+.visual-information { background: linear-gradient(125deg, #243b89, #6d4cc3); }
 .visual-code, .visual-bottom { align-self: flex-start; font: 700 .64rem/1.4 var(--font-display); letter-spacing: .13em; color: #e4edfa; }
 .visual-icon { font-size: 3rem; color: rgba(255,255,255,.95); line-height: 1; }
 .project-body { padding: 26px 25px 24px; flex: 1; display: flex; flex-direction: column; }
