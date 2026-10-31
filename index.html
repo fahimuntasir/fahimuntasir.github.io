@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,7 +146,7 @@
       </div>
     </section>
 
-    <!-- 03: Featured academic and technical projects with a compact archive -->
+    <!-- 03: Compact featured projects and expandable project archive -->
     <section id="projects" class="section section-anchor section-soft" aria-labelledby="projects-title">
       <div class="container">
         <div class="section-heading">
@@ -155,26 +154,36 @@
           <p>Selected work in information theory, programming, and embedded systems.</p>
         </div>
         <div class="project-grid">
-          <!-- 01: Information Theory / Machine Learning -->
-          <article class="project-card">
+          <!-- Illustrative scientific plot, not the project's measured results. -->
+          <article class="project-card project-card--research">
             <div class="project-visual visual-information" aria-hidden="true">
-              <span class="visual-code">01 / RESEARCH</span>
-              <div class="visual-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="visual-top"><span>01 / RESEARCH</span><i class="fa-solid fa-arrow-trend-up"></i></div>
+              <svg class="project-graphic" viewBox="0 0 270 76" fill="none" focusable="false">
+                <path d="M16 5V64H254" stroke="white" stroke-opacity=".35" stroke-width="1.3"/>
+                <path d="M16 48H254M16 29H254M66 5V64M119 5V64M172 5V64M225 5V64" stroke="white" stroke-opacity=".11" stroke-dasharray="3 5"/>
+                <path d="M16 59C46 56 52 19 78 21S115 57 147 37 186 12 211 30 238 29 254 9" stroke="#9FE5FF" stroke-width="3.1" stroke-linecap="round"/>
+                <path d="M16 59C46 56 52 19 78 21S115 57 147 37 186 12 211 30 238 29 254 9V64H16Z" fill="#9FE5FF" fill-opacity=".10"/>
+                <circle cx="78" cy="21" r="4" fill="#E9F7FF"/><circle cx="147" cy="37" r="4" fill="#E9F7FF"/><circle cx="211" cy="30" r="4" fill="#E9F7FF"/>
+              </svg>
               <span class="visual-bottom">PYTHON · INFORMATION THEORY</span>
             </div>
             <div class="project-body">
-              <div class="project-type">INFORMATION THEORY &amp; MACHINE LEARNING</div>
+              <div class="project-type">INFORMATION THEORY &amp; ML</div>
               <h3>Entropy and Mutual Information in Modern Machine Learning</h3>
               <p>Explored MI estimation and feature selection using synthetic data and decision-tree experiments.</p>
               <div class="project-tags"><span>Python</span><span>Mutual Information</span><span>Machine Learning</span></div>
-              <a class="text-link" href="https://github.com/fahimuntasir/entropy-mutual-information-ml" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+              <a class="text-link project-repo" href="https://github.com/fahimuntasir/entropy-mutual-information-ml" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
             </div>
           </article>
-          <!-- 02: C++ / Operating Systems -->
-          <article class="project-card">
+          <!-- Schematic allocation matrix, not a screenshot of program output. -->
+          <article class="project-card project-card--algorithm">
             <div class="project-visual visual-algorithm" aria-hidden="true">
-              <span class="visual-code">02 / ALGORITHMS</span>
-              <div class="visual-icon"><i class="fa-solid fa-code-branch"></i></div>
+              <div class="visual-top"><span>02 / ALGORITHMS</span><i class="fa-solid fa-code"></i></div>
+              <svg class="project-graphic" viewBox="0 0 270 76" fill="none" focusable="false">
+                <text x="25" y="13" fill="#D2E7FF" font-size="9" font-family="monospace" letter-spacing="2">ALLOCATION MATRIX</text>
+                <rect x="20" y="21" width="230" height="45" rx="6" stroke="white" stroke-opacity=".23"/>
+                <g fill="#A4DCFF"><rect x="30" y="29" width="27" height="8" rx="2"/><rect x="64" y="29" width="27" height="8" rx="2" opacity=".45"/><rect x="98" y="29" width="27" height="8" rx="2" opacity=".70"/><rect x="132" y="29" width="27" height="8" rx="2" opacity=".32"/><rect x="166" y="29" width="27" height="8" rx="2" opacity=".7"/><rect x="200" y="29" width="39" height="8" rx="2" opacity=".4"/><rect x="30" y="43" width="27" height="8" rx="2" opacity=".4"/><rect x="64" y="43" width="27" height="8" rx="2" opacity=".9"/><rect x="98" y="43" width="27" height="8" rx="2" opacity=".35"/><rect x="132" y="43" width="27" height="8" rx="2"/><rect x="166" y="43" width="27" height="8" rx="2" opacity=".4"/><rect x="200" y="43" width="39" height="8" rx="2" opacity=".75"/><rect x="30" y="56" width="27" height="5" rx="2" opacity=".7"/><rect x="64" y="56" width="27" height="5" rx="2" opacity=".4"/><rect x="98" y="56" width="27" height="5" rx="2" opacity=".85"/><rect x="132" y="56" width="27" height="5" rx="2" opacity=".4"/><rect x="166" y="56" width="27" height="5" rx="2" opacity=".85"/><rect x="200" y="56" width="39" height="5" rx="2" opacity=".4"/></g>
+              </svg>
               <span class="visual-bottom">C++ · OPERATING SYSTEMS</span>
             </div>
             <div class="project-body">
@@ -182,14 +191,19 @@
               <h3>Banker's Algorithm</h3>
               <p>Implemented safe resource allocation and deadlock avoidance using C++.</p>
               <div class="project-tags"><span>C++</span><span>Algorithms</span><span>Operating Systems</span></div>
-              <a class="text-link" href="https://github.com/fahimuntasir/The-Banker-s-Algorithm" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+              <a class="text-link project-repo" href="https://github.com/fahimuntasir/The-Banker-s-Algorithm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
             </div>
           </article>
-          <!-- 03: Embedded Systems / Simulation -->
-          <article class="project-card">
+          <!-- Pixel grid illustration of the Snake Game. -->
+          <article class="project-card project-card--embedded">
             <div class="project-visual visual-embedded" aria-hidden="true">
-              <span class="visual-code">03 / EMBEDDED</span>
-              <div class="visual-icon"><i class="fa-solid fa-microchip"></i></div>
+              <div class="visual-top"><span>03 / EMBEDDED</span><i class="fa-solid fa-microchip"></i></div>
+              <svg class="project-graphic" viewBox="0 0 270 76" fill="none" focusable="false">
+                <defs><pattern id="snake-grid" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M13 0H0V13" stroke="#BDECEB" stroke-opacity=".2" stroke-width="1"/></pattern></defs>
+                <rect x="45" y="2" width="182" height="72" rx="7" fill="url(#snake-grid)" stroke="#D8FFEE" stroke-opacity=".3"/>
+                <g fill="#B3FFCE"><rect x="84" y="41" width="12" height="12" rx="2"/><rect x="97" y="41" width="12" height="12" rx="2"/><rect x="110" y="41" width="12" height="12" rx="2"/><rect x="110" y="28" width="12" height="12" rx="2"/><rect x="110" y="15" width="12" height="12" rx="2"/><rect x="123" y="15" width="12" height="12" rx="2"/><rect x="136" y="15" width="12" height="12" rx="2"/></g>
+                <rect x="175" y="41" width="12" height="12" rx="2" fill="#FFD58B"/><circle cx="141" cy="18" r="1.6" fill="#0F5960"/>
+              </svg>
               <span class="visual-bottom">PROTEUS · MICROCONTROLLERS</span>
             </div>
             <div class="project-body">
@@ -197,70 +211,104 @@
               <h3>Snake Game Player</h3>
               <p>Built and simulated a microcontroller-based Snake Game in Proteus.</p>
               <div class="project-tags"><span>Proteus</span><span>Microcontrollers</span></div>
-              <a class="text-link" href="https://github.com/fahimuntasir/Snake-Game-Player" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+              <a class="text-link project-repo" href="https://github.com/fahimuntasir/Snake-Game-Player" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
             </div>
           </article>
         </div>
         <details class="more-projects">
-          <summary><span>Explore additional projects</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+          <summary><span><i class="fa-regular fa-folder-open" aria-hidden="true"></i> Explore additional projects <span class="project-count">3</span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
           <div class="mini-project-grid">
-            <article class="mini-project"><div class="mini-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div><h3>Classified Multi-Vendor Ads Management Website</h3><p>Undergraduate thesis · Laravel, PHP, MySQL and HTML.</p><span class="mini-note">Project overview · Demo link not available</span></article>
-            <article class="mini-project"><div class="mini-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></div><h3>Doubly Linked List Reimplementation</h3><p>Java implementation exploring data structures and OOP.</p><a class="text-link" href="https://github.com/fahimuntasir/Re-Implementing-a-doubly-Linked-lists" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
-            <article class="mini-project"><div class="mini-icon"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i></div><h3>Material Inventory Management System</h3><p>C# and .NET desktop application for organizing and tracking materials.</p><a class="text-link" href="https://github.com/fahimuntasir/Material-Inventory-Management-System" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
+            <article class="mini-project mini-project--web">
+              <div class="mini-top"><span class="mini-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span><span class="mini-category">WEB DEVELOPMENT</span></div>
+              <h3>Classified Multi-Vendor Ads Management Website</h3>
+              <p>Undergraduate thesis · Laravel, PHP, MySQL and HTML.</p>
+              <span class="mini-note">Project overview · Demo link not available</span>
+            </article>
+            <article class="mini-project mini-project--java">
+              <div class="mini-top"><span class="mini-icon"><i class="fa-brands fa-java" aria-hidden="true"></i></span><span class="mini-category">DATA STRUCTURES</span></div>
+              <h3>Doubly Linked List Reimplementation</h3>
+              <p>Java implementation exploring data structures and OOP.</p>
+              <a class="text-link" href="https://github.com/fahimuntasir/Re-Implementing-a-doubly-Linked-lists" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-project mini-project--dotnet">
+              <div class="mini-top"><span class="mini-icon"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i></span><span class="mini-category">DESKTOP APP</span></div>
+              <h3>Material Inventory Management System</h3>
+              <p>C# and .NET desktop application for organizing and tracking materials.</p>
+              <a class="text-link" href="https://github.com/fahimuntasir/Material-Inventory-Management-System" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Repository <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </article>
           </div>
         </details>
         <div class="section-end-link"><a class="text-link" href="https://github.com/fahimuntasir" target="_blank" rel="noopener noreferrer">More on GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
       </div>
     </section>
 
-    <!-- 04: Professional work; full details optional -->
+    <!-- 04: Three newest roles are displayed; older roles are archived by main.js. -->
     <section id="experience" class="section section-anchor" aria-labelledby="experience-title">
       <div class="container">
         <div class="section-heading">
           <div><div class="kicker">03 / PROFESSIONAL JOURNEY</div><h2 id="experience-title">Experience<span class="accent-text">.</span></h2></div>
-          <p>Technology support and operational experience across different working environments.</p>
+          <p>Technical support and project operations across different working environments.</p>
         </div>
-        <div class="experience-list">
-          <article class="job-card">
-            <div class="job-logo"><img src="assets/logos/motionhost.png" loading="lazy" width="48" height="48" alt="MotionHost logo"></div>
-            <div class="job-main">
-              <div class="job-title-line">
-                <div class="job-role"><h3>Technical Support Engineer</h3><span class="work-badge work-badge--remote"><i class="fa-solid fa-wifi" aria-hidden="true"></i> Remote</span></div>
-                <span class="job-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Jan 2026 – Jul 2026</span>
+        <!-- Add future positions here, newest first. JS shows the first three and archives the rest. -->
+        <div class="experience-timeline" id="experience-entries">
+          <article class="timeline-entry timeline-entry--tech">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-logo"><img src="assets/logos/motionhost.png" loading="lazy" width="42" height="42" alt="MotionHost logo"></div>
+              <div class="timeline-content">
+                <div class="timeline-head"><h3>Technical Support Engineer</h3><span class="work-badge work-badge--remote"><i class="fa-solid fa-wifi" aria-hidden="true"></i> Remote</span></div>
+                <div class="timeline-company">MotionHost</div>
+                <div class="timeline-meta"><span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Jan 2026 – Jul 2026</span><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dhaka, Bangladesh <img class="country-flag" src="https://flagcdn.com/w20/bd.png" width="20" height="13" loading="lazy" alt="Bangladesh flag"></span></div>
+                <p class="timeline-description">Resolved domain, hosting, DNS and website technical issues.</p>
+                <details class="timeline-details"><summary>Key responsibilities <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><ul><li>Investigated domain, hosting, SSL, email, and DNS-related support requests.</li><li>Assisted clients with cPanel and other hosting configurations.</li><li>Supported website reliability and technical issue resolution.</li></ul></details>
               </div>
-              <div class="job-company">MotionHost</div>
-              <div class="job-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dhaka, Bangladesh <img class="country-flag" src="https://flagcdn.com/w20/bd.png" alt="Bangladesh flag" loading="lazy" width="20" height="13"></div>
-              <p>Supported customers with domain, DNS, hosting, website troubleshooting, and related technical configurations.</p>
-              <details class="job-more"><summary>Key responsibilities <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><ul><li>Investigated domain, hosting, SSL, email, and DNS-related support requests.</li><li>Assisted clients with cPanel and other hosting configurations.</li><li>Supported website reliability and technical issue resolution.</li></ul></details>
             </div>
           </article>
-          <article class="job-card">
-            <div class="job-logo"><img src="assets/logos/aus.png" loading="lazy" width="48" height="48" alt="Adivasi Unnayan Sangstha logo"></div>
-            <div class="job-main">
-              <div class="job-title-line">
-                <div class="job-role"><h3>Finance &amp; Admin Coordinator</h3><span class="work-badge work-badge--fulltime"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Full-time</span></div>
-                <span class="job-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Jun 2025 – Dec 2025</span>
+          <article class="timeline-entry timeline-entry--finance">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-logo"><img src="assets/logos/aus.png" loading="lazy" width="42" height="42" alt="Adivasi Unnayan Sangstha (AUS) logo"></div>
+              <div class="timeline-content">
+                <div class="timeline-head"><h3>Finance &amp; Admin Coordinator</h3><span class="work-badge work-badge--fulltime"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Full-time</span></div>
+                <div class="timeline-company">Adivasi Unnayan Sangstha (AUS)</div>
+                <div class="timeline-meta"><span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Jun 2025 – Dec 2025</span><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Netrokona, Bangladesh <img class="country-flag" src="https://flagcdn.com/w20/bd.png" width="20" height="13" loading="lazy" alt="Bangladesh flag"></span></div>
+                <p class="timeline-description">Managed financial reporting, compliance and ICBC project operations.</p>
+                <details class="timeline-details"><summary>Key responsibilities <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><ul><li>Prepared budgeting, payroll, financial reports, and compliance documentation.</li><li>Supported audit coordination, VAT/tax compliance, and fund disbursement processes.</li><li>Conducted field monitoring and KoBo Toolbox data collection.</li></ul></details>
               </div>
-              <div class="job-company">Adivasi Unnayan Sangstha (AUS)</div>
-              <div class="job-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Netrokona, Bangladesh <img class="country-flag" src="https://flagcdn.com/w20/bd.png" alt="Bangladesh flag" loading="lazy" width="20" height="13"></div>
-              <p>Coordinated financial reporting, administration, data collection, and operations for the ICBC project.</p>
-              <details class="job-more"><summary>Key responsibilities <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><ul><li>Prepared budgeting, payroll, financial reports, and compliance documentation.</li><li>Supported audit coordination, VAT/tax compliance, and fund disbursement processes.</li><li>Conducted field monitoring and KoBo Toolbox data collection.</li></ul></details>
             </div>
           </article>
-          <article class="job-card">
-            <div class="job-logo"><img src="assets/logos/aus.png" loading="lazy" width="48" height="48" alt="Adivasi Unnayan Sangstha logo"></div>
-            <div class="job-main">
-              <div class="job-title-line">
-                <div class="job-role"><h3>ECCD Officer</h3><span class="work-badge work-badge--fulltime"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Full-time</span></div>
-                <span class="job-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Mar 2024 – May 2025</span>
+          <article class="timeline-entry timeline-entry--field">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-logo"><img src="assets/logos/aus.png" loading="lazy" width="42" height="42" alt="Adivasi Unnayan Sangstha (AUS) logo"></div>
+              <div class="timeline-content">
+                <div class="timeline-head"><h3>ECCD Officer</h3><span class="work-badge work-badge--fulltime"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Full-time</span></div>
+                <div class="timeline-company">Adivasi Unnayan Sangstha (AUS)</div>
+                <div class="timeline-meta"><span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Mar 2024 – May 2025</span><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sunamganj, Bangladesh <img class="country-flag" src="https://flagcdn.com/w20/bd.png" width="20" height="13" loading="lazy" alt="Bangladesh flag"></span></div>
+                <p class="timeline-description">Coordinated early-childhood activities, stakeholders and reporting.</p>
+                <details class="timeline-details"><summary>Key responsibilities <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><ul><li>Supported quality assurance and supervision of field activities.</li><li>Coordinated training and capacity-building with local stakeholders.</li><li>Monitored program progress and prepared structured reports.</li></ul></details>
               </div>
-              <div class="job-company">Adivasi Unnayan Sangstha (AUS)</div>
-              <div class="job-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sunamganj, Bangladesh <img class="country-flag" src="https://flagcdn.com/w20/bd.png" alt="Bangladesh flag" loading="lazy" width="20" height="13"></div>
-              <p>Supervised early-childhood development activities, field implementation, stakeholder coordination, and reporting.</p>
-              <details class="job-more"><summary>Key responsibilities <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><ul><li>Supported quality assurance and supervision of field activities.</li><li>Coordinated training and capacity-building with local stakeholders.</li><li>Monitored program progress and prepared structured reports.</li></ul></details>
+            </div>
+          </article>
+          <!-- DEMO ONLY: replace or delete this example before publishing. -->
+          <article class="timeline-entry timeline-entry--demo" data-demo="true">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-logo timeline-logo--demo"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-head"><h3>Sample Software Developer Role</h3><span class="work-badge work-badge--demo">DEMO ONLY</span></div>
+                <div class="timeline-company">Example Organization (not actual employment)</div>
+                <div class="timeline-meta"><span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Example earlier role</span><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sample location</span></div>
+                <p class="timeline-description">Illustrates how a future older position will appear in the archive.</p>
+                <details class="timeline-details"><summary>Example responsibilities <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><ul><li>Replace this example with responsibilities from your actual role.</li></ul></details>
+              </div>
             </div>
           </article>
         </div>
+        <details class="earlier-experience" id="earlier-experience" hidden>
+          <summary><span><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> View earlier experience <span class="archive-count" id="earlier-count">0</span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+          <div class="experience-timeline experience-timeline--archive" id="earlier-list"></div>
+        </details>
         <details class="training-expander">
           <summary><span><i class="fa-solid fa-certificate" aria-hidden="true"></i> Training &amp; workshops</span><span>3 programs <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span></summary>
           <div class="training-list">
