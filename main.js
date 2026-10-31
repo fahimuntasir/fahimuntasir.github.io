@@ -1,4 +1,3 @@
-
 /* Fast, accessible interactions for the one-page portfolio. */
 (() => {
   'use strict';
@@ -10,6 +9,20 @@
   const navigation = document.getElementById('site-nav');
   const navLinks = [...document.querySelectorAll('.nav-link')];
   const year = document.getElementById('year');
+
+  // Show only the first three roles, in the order written in index.html.
+  // Add new roles to the top of #experience-entries and older ones move to the archive.
+  const experienceList = document.getElementById('experience-entries');
+  const archive = document.getElementById('earlier-experience');
+  const archiveList = document.getElementById('earlier-list');
+  const archiveCount = document.getElementById('earlier-count');
+  if (experienceList && archive && archiveList) {
+    const roles = [...experienceList.children].filter(role => role.classList.contains('timeline-entry'));
+    const older = roles.slice(3);
+    older.forEach(role => archiveList.appendChild(role));
+    archive.hidden = older.length === 0;
+    if (archiveCount) archiveCount.textContent = String(older.length);
+  }
 
   if (year) year.textContent = new Date().getFullYear();
 
