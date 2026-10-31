@@ -452,6 +452,22 @@ h3 { letter-spacing: -.025em; }
   .award-symbol { width: 33px; height: 33px; flex-basis: 33px; }
   .award-row strong { font-size: .81rem; }
 }
+/* Languages: a compact second card below honours; no extra page height on desktop */
+.highlights-right { display: grid; align-content: start; gap: 16px; min-width: 0; }
+.language-panel { padding: 21px 25px; }
+.language-panel > h3 { margin-bottom: 9px; }
+.language-list { display: grid; }
+.language-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; }
+.language-row + .language-row { border-top: 1px solid var(--border); }
+.language-name { color: var(--text); font-size: .84rem; font-weight: 600; }
+.language-level { color: var(--muted); font-size: .79rem; text-align: right; }
+@media (max-width: 560px) {
+  .highlights-right { gap: 13px; }
+  .language-panel { padding: 19px 21px; }
+  .language-name { font-size: .82rem; }
+  .language-level { font-size: .77rem; }
+}
+
 /* Responsive polish for featured projects and the experience timeline */
 @media (max-width: 980px) {
   .project-graphic { height: 68px; }
