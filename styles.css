@@ -166,7 +166,7 @@ h3 { letter-spacing: -.025em; }
 .project-count, .archive-count { padding: 2px 7px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-size: .71rem; }
 .more-projects > summary > .fa-chevron-down, .earlier-experience > summary > .fa-chevron-down, .training-expander > summary .fa-chevron-down { transition: transform .2s; }
 .more-projects[open] > summary > .fa-chevron-down, .earlier-experience[open] > summary > .fa-chevron-down, .training-expander[open] > summary .fa-chevron-down { transform: rotate(180deg); }
-.mini-project-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; padding: 0 16px 16px; }
+.mini-project-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; padding: 0 16px 16px; }
 .mini-project { min-width: 0; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 15px; transition: transform .2s,border-color .2s,box-shadow .2s; }
 .mini-project:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 18px rgba(20,38,61,.055); }
 .mini-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 12px; }
@@ -508,4 +508,16 @@ h3 { letter-spacing: -.025em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .project-card, .mini-project, .timeline-card { transition: none; }
+}
+
+@media (max-width: 1100px) {
+  .mini-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .mini-project-grid {
+    grid-template-columns: 1fr;
+  }
 }
