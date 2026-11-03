@@ -139,12 +139,13 @@ h3 { letter-spacing: -.025em; }
 .project-visual { height: 138px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; isolation: isolate; padding: 12px 15px; color: #fff; }
 .project-visual::before { content: ''; position: absolute; z-index: -1; inset: -60px -30px auto auto; width: 190px; height: 190px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255,255,255,.03); }
 .visual-information { background: linear-gradient(125deg,#26377e,#5743a5); }
-.visual-algorithm { background: linear-gradient(125deg,#173650,#285b86); }
+.visual-algorithm, .visual-gaussian { background: linear-gradient(125deg,#173650,#285b86); }
 .visual-embedded { background: linear-gradient(125deg,#12525e,#237e80); }
 .visual-thesis { background: linear-gradient(125deg,#16465f,#287e99); }
 .visual-top { display: flex; justify-content: space-between; align-items: center; color: #e7f3ff; font: 800 .61rem/1.3 var(--font-display); letter-spacing: .11em; }
 .visual-top i { font-size: .83rem; color: #e7f3ff; opacity: .83; }
 .project-graphic { height: 71px; width: 100%; display: block; overflow: visible; }
+.project-figure { object-fit: contain; border-radius: 4px; }
 .visual-bottom { align-self: flex-start; color: #e3f3ff; font: 700 .59rem/1.4 var(--font-display); letter-spacing: .095em; }
 .project-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
 .project-type { font: 800 .62rem/1.4 var(--font-display); color: var(--accent); letter-spacing: .075em; margin-bottom: 7px; }
