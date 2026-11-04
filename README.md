@@ -13,6 +13,17 @@ It serves as a digital profile for academic applications, professional opportuni
 
 ---
 
+## ✨ Portfolio Features
+
+- Responsive layout for desktop, tablet, and mobile screens.
+- Light and dark themes with a theme toggle.
+- Featured technical projects with repository links and an expandable additional-projects section.
+- Compact professional-experience timeline with expandable responsibilities and earlier roles.
+- Expandable training and workshop details.
+- Sections for education, research focus, technical skills, honours, languages, and contact information.
+
+---
+
 ## 🛠️ Technologies Used
 
 - HTML5  
@@ -33,14 +44,13 @@ It serves as a digital profile for academic applications, professional opportuni
 │
 ├── assets/
 │   ├── images/             # Photos and visual content
-│   ├── icons/              # UI icons
 │   ├── logos/              # Organization & project logos
 │   └── documents/          # CV, certificates, PDFs
 │
 ├── .gitignore              # Git ignored files
 ├── LICENSE                 # MIT License
 └── README.md               # Project documentation
-````
+```
 
 ---
 
@@ -48,20 +58,11 @@ It serves as a digital profile for academic applications, professional opportuni
 
 ### Code License
 
-The **source code** in this repository is licensed under the **MIT License**.
-You are free to use, modify, and distribute the code **with proper attribution**.
+The website's **source code** is provided under the [MIT License](LICENSE). You may use, modify, and distribute that code as permitted by the license, provided the required copyright and license notices are included.
 
 ### Content Notice
 
-All **personal content** including (but not limited to):
-
-* Name
-* Biography
-* Images
-* Resume/CV details
-* Academic and professional records
-
-is **copyright © MD FAHIM MUNTASIR** and **may not be reused, redistributed, or misrepresented** without explicit permission.
+Personal materials presented on this website—including my biography, photographs, CV, academic records, and professional information—are **not offered for reuse under the MIT code license**. Please seek permission before reproducing or redistributing my original personal content. Third-party logos, icons, and other assets remain subject to their respective owners' rights and licenses.
 
 ---
 
@@ -72,7 +73,8 @@ If you would like to connect or have any inquiries, feel free to reach out:
 * 🌐 Portfolio: [https://fahimuntasir.github.io/](https://fahimuntasir.github.io/)
 * 📧 Email: [fahim79muntasir@gmail.com](mailto:fahim79muntasir@gmail.com)
 * 💼 GitHub: [https://github.com/fahimuntasir](https://github.com/fahimuntasir)
+* 🔗 LinkedIn: [https://www.linkedin.com/in/fahimuntasir/](https://www.linkedin.com/in/fahimuntasir/)
 
 ---
 
-© 2026 MD FAHIM MUNTASIR. All rights reserved.
+© 2026 MD FAHIM MUNTASIR. Website code: MIT License. Personal content: rights reserved.
