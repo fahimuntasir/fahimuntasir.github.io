@@ -90,7 +90,7 @@
   const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 12);
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
-}
+
   // Animate every native <details> panel without changing its markup or layout.
   // This covers projects, responsibilities, older roles, workshops and training items.
   const detailAnimations = new WeakMap();
