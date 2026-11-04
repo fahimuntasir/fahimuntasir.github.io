@@ -90,4 +90,49 @@
   const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 12);
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
+}
+  // Animate every native <details> panel without changing its markup or layout.
+  // This covers projects, responsibilities, older roles, workshops and training items.
+  const detailAnimations = new WeakMap();
+  document.querySelectorAll('details').forEach(details => {
+    const summary = details.querySelector(':scope > summary');
+    if (!summary) return;
+
+    summary.addEventListener('click', event => {
+      if (event.defaultPrevented || event.button !== 0 ||
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      event.preventDefault();
+
+      const previous = detailAnimations.get(details);
+      const opening = previous ? !previous.opening : !details.open;
+      const startHeight = details.getBoundingClientRect().height;
+      if (previous) previous.animation.cancel();
+
+      details.open = true; // Keep content measurable throughout both directions.
+      details.style.height = 'auto';
+      const expandedHeight = details.getBoundingClientRect().height;
+      const styles = getComputedStyle(details);
+      const collapsedHeight = summary.getBoundingClientRect().height +
+        parseFloat(styles.borderTopWidth || 0) +
+        parseFloat(styles.borderBottomWidth || 0) +
+        parseFloat(styles.paddingTop || 0) +
+        parseFloat(styles.paddingBottom || 0);
+
+      details.style.height = startHeight + 'px';
+      details.style.overflow = 'hidden';
+      const animation = details.animate(
+        { height: [startHeight + 'px', (opening ? expandedHeight : collapsedHeight) + 'px'] },
+        { duration: 360, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+      );
+      const state = { animation, opening };
+      detailAnimations.set(details, state);
+      animation.onfinish = () => {
+        if (detailAnimations.get(details) !== state) return;
+        details.open = opening;
+        details.style.removeProperty('height');
+        details.style.removeProperty('overflow');
+        detailAnimations.delete(details);
+      };
+    });
+  });
 })();
