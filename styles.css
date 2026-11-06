@@ -275,7 +275,7 @@ h3 { letter-spacing: -.025em; }
 .contact-links a { display: inline-flex; align-items: center; gap: 9px; color: #d2def1; font-size: .85rem; }
 .contact-links a:hover { color: white; }
 .site-footer { background: #0e1e32; color: #afbed1; padding: 24px 0; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-right: 72px; font-size: .76rem; }
+.footer-inner { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; text-align: center; font-size: .76rem; }
 
 /* Responsive, accessible floating return-to-top control */
 .back-to-top {
@@ -402,8 +402,7 @@ h3 { letter-spacing: -.025em; }
   .training-list span { display: block; text-align: left; }
   .highlight-panel { padding: 22px; }
   .contact-section { padding: 75px 0; }
-  .footer-inner { justify-content: center; text-align: center; padding-right: 0; padding-bottom: 48px; }
-  .footer-inner span:nth-child(2) { display: none; }
+  .footer-inner { padding-bottom: 48px; }
 }
 
 /* Honor operating-system accessibility preferences */
