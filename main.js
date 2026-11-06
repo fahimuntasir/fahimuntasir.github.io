@@ -91,6 +91,17 @@
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 
+  // Show the floating control only after scrolling past the hero.
+  const backToTop = document.getElementById('back-to-top');
+  const updateBackToTop = () => backToTop?.classList.toggle('is-visible', window.scrollY > 350);
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+  backToTop?.addEventListener('click', () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+    document.querySelector('.brand')?.focus({ preventScroll: true });
+  });
+
   // Animate every native <details> panel without changing its markup or layout.
   // This covers projects, responsibilities, older roles, workshops and training items.
   const detailAnimations = new WeakMap();
