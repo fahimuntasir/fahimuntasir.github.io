@@ -61,7 +61,12 @@
     if (icon) icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
   });
   navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navigation?.classList.contains('open')) {
+      closeMenu();
+      menuButton?.focus(); // Keep keyboard focus visible after closing the mobile menu.
+    }
+  });
   document.addEventListener('click', event => {
     if (navigation?.classList.contains('open') && !navigation.contains(event.target) && !menuButton?.contains(event.target)) closeMenu();
   });
